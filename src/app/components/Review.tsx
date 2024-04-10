@@ -18,8 +18,8 @@ export default function Review({
             className="pl-1"
             src="/target.svg"
             alt="Target"
-            height={22}
-            width={22}
+            height={24}
+            width={24}
           />
         </div>
 

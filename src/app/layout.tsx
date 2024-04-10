@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${quicksand.variable}`}>{children}</body>
+      <body className={`font-sans ${quicksand.variable} bg-violet-100`}>{children}</body>
     </html>
   );
 }

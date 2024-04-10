@@ -3,6 +3,7 @@ import Image from "next/image";
 import Sliding from "./components/Sliding";
 import Question from "./components/Question";
 import Review from "./components/Review";
+import Typing from "./components/Typing";
 
 export default function HomePage() {
   return (
@@ -13,7 +14,7 @@ export default function HomePage() {
         </Link>
         <Link
           className="flex h-11 w-56 cursor-pointer flex-row items-center justify-center gap-2 rounded-[20px] bg-violet-700 px-6 py-2"
-          href="https://create.t3.gg/en/usage/first-steps"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfOcYOZsjZXoeZE8HIHk7VW8bVGG6k4SjpuWFcQabo31zzotA/viewform"
           target="_blank"
         >
           <div className="text-nowrap text-[15px] font-semibold text-white">
@@ -29,11 +30,25 @@ export default function HomePage() {
       </div>
 
       <h3 className="pb-2 text-center text-3xl font-bold text-zinc-500">
-        Learn vocabularies and phrases in Spanish
+        Learn a foreign language
       </h3>
-      <h1 className="bg-gradient-to-r from-indigo-400 to-violet-700 bg-clip-text pb-8 text-center text-[65px] font-bold text-transparent">
-        as you read Reddit threads
-      </h1>
+      <Typing
+        phrases={[
+          "scroll Reddit",
+          "surf the web",
+          "search Wikipedia",
+          "browse the internet",
+        ]}
+      />
+
+      <Link
+        className="pt-12"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfOcYOZsjZXoeZE8HIHk7VW8bVGG6k4SjpuWFcQabo31zzotA/viewform"
+        target="_blank"
+      >
+        <Image src="/jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
+      </Link>
+      <Image src="/half_jar.svg" alt="Half Jar Icon" height={612} width={435} />
 
       <Sliding
         contents={[
@@ -187,7 +202,7 @@ export default function HomePage() {
         />
         <div className="flex items-center gap-6">
           <Link
-            href="https://create.t3.gg/en/usage/first-steps"
+            href="https://www.instagram.com/jargonlearn"
             target="_blank"
           >
             <Image
@@ -199,7 +214,7 @@ export default function HomePage() {
             />
           </Link>
           <Link
-            href="https://create.t3.gg/en/usage/first-steps"
+            href="https://www.linkedin.com/in/jargon-learn/"
             target="_blank"
           >
             <Image
@@ -211,7 +226,7 @@ export default function HomePage() {
             />
           </Link>
           <Link
-            href="https://create.t3.gg/en/usage/first-steps"
+            href="mailto:jargonlearn@gmail.com"
             target="_blank"
           >
             <Image
@@ -224,7 +239,7 @@ export default function HomePage() {
           </Link>
           <Link
             className="flex h-14 flex-row items-center justify-center gap-2 rounded-[40px] bg-violet-700 px-12 py-4"
-            href="https://create.t3.gg/en/usage/first-steps"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfOcYOZsjZXoeZE8HIHk7VW8bVGG6k4SjpuWFcQabo31zzotA/viewform"
             target="_blank"
           >
             <div className="text-nowrap text-[22px] font-medium text-white">

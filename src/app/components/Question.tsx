@@ -18,9 +18,8 @@ export default function Question({
   // handleSelection: (sel: string) => void;
 }) {
   const [selected, setSelected] = useState<boolean>(false);
-  const [input, setInput] = useState<string>("");
 
-  const onSubmit = (sel: string) => {
+  const onSubmit = () => {
     setSelected(true);
     // handleSelection(sel);
   };
@@ -60,7 +59,7 @@ export default function Question({
                 color={
                   selected ? (choice == correct ? "green" : "red") : "grey"
                 }
-                onClick={() => onSubmit(choice)}
+                onClick={() => onSubmit()}
               />
             );
           })}
@@ -69,7 +68,7 @@ export default function Question({
 
       <div className="relative h-[50px] w-full rounded-b-[20px] bg-violet-100 px-6">
         <div className="flex h-full w-full flex-row items-center justify-center space-x-2">
-          <button onClick={() => {}}>
+          <button>
             <Image
               src="/closed_jar_no_letters.png"
               alt="Jar Icon"
@@ -77,7 +76,7 @@ export default function Question({
               width={17}
             />
           </button>
-          <button onClick={() => {}}>
+          <button>
             <Image
               src="/target.svg"
               alt="Target Icon"
@@ -85,7 +84,7 @@ export default function Question({
               width={24}
             />
           </button>
-          <button onClick={() => {}}>
+          <button>
             <Image
               src="/report_problem.svg"
               alt="Report Icon"
@@ -94,7 +93,7 @@ export default function Question({
             />
           </button>
           <div className="flex-grow" />
-          <button onClick={() => {}}>
+          <button>
             <Image
               src="/level_up.svg"
               alt="Level Up Icon"
