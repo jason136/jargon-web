@@ -1,34 +1,241 @@
 import Link from "next/link";
+import Image from "next/image";
+import Sliding from "./components/Sliding";
+import Question from "./components/Question";
+import Review from "./components/Review";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+    <main className="flex min-h-screen flex-col items-center justify-start overflow-hidden bg-violet-100">
+      <div className="flex w-full flex-row items-center justify-between px-8 py-4 pb-40">
+        <Link href="/">
+          <Image src="/jargon.png" alt="Jargon Logo" width={166} height={57} />
+        </Link>
+        <Link
+          className="flex h-11 w-56 cursor-pointer flex-row items-center justify-center gap-2 rounded-[20px] bg-violet-700 px-6 py-2"
+          href="https://create.t3.gg/en/usage/first-steps"
+          target="_blank"
+        >
+          <div className="text-nowrap text-[15px] font-semibold text-white">
+            Join Our Waitlist
+          </div>
+          <Image
+            src="/external_site.svg"
+            alt="External Link Icon"
+            height={14}
+            width={15}
+          />
+        </Link>
+      </div>
+
+      <h3 className="pb-2 text-center text-3xl font-bold text-zinc-500">
+        Learn vocabularies and phrases in Spanish
+      </h3>
+      <h1 className="bg-gradient-to-r from-indigo-400 to-violet-700 bg-clip-text pb-8 text-center text-[65px] font-bold text-transparent">
+        as you read Reddit threads
+      </h1>
+
+      <Sliding
+        contents={[
+          "Spanish 🇪🇸",
+          "Italian 🇮🇹",
+          "French 🇫🇷",
+          "German 🇩🇪",
+          "Portuguese 🇵🇹",
+          "Mandarin 🇨🇳",
+          "Japanese 🇯🇵",
+          "Korean 🇰🇷",
+          "Hindi 🇮🇳",
+        ]}
+      />
+
+      <div className="flex flex-col items-start justify-start gap-4 pt-20">
+        <h2 className="bg-violet-300 text-left text-4xl font-bold text-zinc-500">
+          Why is language learning so hard?
+        </h2>
+
+        <p className="max-w-[950px] text-left text-[26px] text-zinc-500">
+          Online language learning is widely accessible, yet many apps offer
+          irrelevant content that requires A LOT OF willpower to actually
+          practice until fluency
+        </p>
+      </div>
+
+      <div className="flex w-full flex-row justify-between py-16">
+        <div></div>
+        <div className="flex max-w-96 flex-grow flex-col justify-end pb-8 text-right">
+          <h3 className="text-3xl font-bold leading-[42px] text-violet-700">
+            Consistent Practice
+          </h3>
+          <p className="text-2xl font-medium leading-8 text-zinc-500">
+            Doing vocabulary practice is easy, but practicing 30 minutes
+            everyday is hard.
+          </p>
+        </div>
+        <div className="rotate-[-5.92deg]">
+          <Question
+            progress={50}
+            sentence="¿Por qué es ____ difícil aprender un idioma?"
+            options={["muy", "tan", "esto", "demasido"]}
+            correct="muy"
+          />
+        </div>
+        <div className="flex max-w-96 flex-col justify-start pt-8 text-left">
+          <h3 className="text-3xl font-bold leading-[42px] text-violet-700">
+            Contextual Learning
+          </h3>
+          <p className="text-2xl font-medium leading-8 text-zinc-500">
+            Learning to say “I am hungry” is fun, but learning to say phrases in
+            real context and jargons in your interest are more practical.
+          </p>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="flex w-full flex-col items-center justify-center gap-6 bg-blue-50 py-16">
+        <h2 className="text-[45px] font-bold text-violet-700">
+          In Context + Integrated Learning ={" "}
+          <span className="inline-flex h-full align-middle">
+            <Image
+              src="/jargon.png"
+              alt="Jargon Logo"
+              width={190}
+              height={66}
+            />
+          </span>
+        </h2>
+
+        <p className="max-w-[1100px] text-center text-[26px] font-medium leading-9 text-zinc-500">
+          Jargon integrates learning into your browsing experience: whether you
+          are checking emails, reading the news, doing work or even scrolling
+          through Reddit threads, you can learn new vocabularies and phrases
+          more effortlessly!
+        </p>
+      </div>
+
+      <div className="flex w-full flex-row items-center justify-between pb-20 pt-24">
+        <div></div>
+        <div></div>
+        {[
+          {
+            name: "Vijay",
+            lang: "🇪🇸 Spanish Learner",
+            review:
+              "I started using Jargon right before my college Spanish proficiency test— I ended up placing at the highest level! The constant practice and varied contexts definitely helped.",
+            tilt: -5.92,
+            y_offset: -30,
+          },
+          {
+            name: "David",
+            lang: "🇫🇷 French Learner",
+            review:
+              "I get to turn my mindless web-surfing into something productive! Definitely a lot more interesting than the exercises I pored over in high school.",
+            tilt: 5.61,
+            y_offset: 30,
+          },
+          {
+            name: "Stephen",
+            lang: "🇨🇳 Chinese Learner",
+            review:
+              "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I’m learning.",
+            tilt: -4.85,
+            y_offset: -30,
+          },
+          {
+            name: "Lucy",
+            lang: "🇪🇸 Spanish Learner",
+            review:
+              "As someone gearing up to study abroad, Jargon has made me more confident than any pocket dictionary in navigating a city, reading instructions, and more all in a foreign language!",
+            tilt: 1.57,
+            y_offset: 30,
+          },
+        ].map((rev, index) => (
+          <div
+            key={index}
+            style={{
+              transform: `rotate(${rev.tilt}deg) translateY(${rev.y_offset}px)`,
+            }}
+          >
+            <Review name={rev.name} lang={rev.lang} review={rev.review} />
+          </div>
+        ))}
+        <div></div>
+        <div></div>
+      </div>
+
+      <h2 className="pb-8 text-[45px] font-bold text-neutral-700">
+        People love{" "}
+        <span className="inline-flex h-full align-middle">
+          <Image
+            className=""
+            src="/jargon.png"
+            alt="Jargon Logo"
+            width={190}
+            height={66}
+          />
+        </span>{" "}
+        !!
+      </h2>
+
+      <div className="flex w-full flex-row items-center justify-between bg-violet-200 px-20 py-8">
+        <Image
+          className=""
+          src="/jargon.png"
+          alt="Jargon Logo"
+          width={262}
+          height={91}
+        />
+        <div className="flex items-center gap-6">
           <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
             href="https://create.t3.gg/en/usage/first-steps"
             target="_blank"
           >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
+            <Image
+              className=""
+              src="/instagram.svg"
+              alt="Instagram Icon"
+              width={56}
+              height={56}
+            />
           </Link>
           <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
+            href="https://create.t3.gg/en/usage/first-steps"
             target="_blank"
           >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
+            <Image
+              className=""
+              src="/linkedin.svg"
+              alt="Linkedin Icon"
+              width={56}
+              height={56}
+            />
+          </Link>
+          <Link
+            href="https://create.t3.gg/en/usage/first-steps"
+            target="_blank"
+          >
+            <Image
+              className=""
+              src="/email.svg"
+              alt="Email Logo"
+              width={56}
+              height={56}
+            />
+          </Link>
+          <Link
+            className="flex h-14 flex-row items-center justify-center gap-2 rounded-[40px] bg-violet-700 px-12 py-4"
+            href="https://create.t3.gg/en/usage/first-steps"
+            target="_blank"
+          >
+            <div className="text-nowrap text-[22px] font-medium text-white">
+              Join Our Waitlist
             </div>
+            <Image
+              src="/external_site.svg"
+              alt="External Link Icon"
+              height={14}
+              width={15}
+            />
           </Link>
         </div>
       </div>

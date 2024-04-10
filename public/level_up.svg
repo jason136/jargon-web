@@ -1,0 +1,12 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="level_up" clip-path="url(#clip0_713_4626)">
+<circle id="Ellipse 40" cx="12" cy="12" r="12" fill="#7E8EF8"/>
+<path id="Polygon 1" d="M11.1942 5.09666C11.5938 4.55284 12.4062 4.55284 12.8058 5.09666L16.8923 10.6579C17.3775 11.3183 16.906 12.25 16.0864 12.25H7.91358C7.09404 12.25 6.62246 11.3183 7.10774 10.6579L11.1942 5.09666Z" fill="#EAE5FD"/>
+<rect id="Rectangle 52" x="10" y="11" width="4" height="8" rx="1" fill="#EAE5FD"/>
+</g>
+<defs>
+<clipPath id="clip0_713_4626">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
