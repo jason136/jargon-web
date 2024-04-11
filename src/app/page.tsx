@@ -89,7 +89,7 @@ export default function HomePage() {
 
       <div className="flex w-full flex-col items-center justify-between py-16 sm:flex-row">
         <div></div>
-        <div className="flex h-full  max-w-96 flex-grow flex-col justify-end pb-12 pt-4 text-right sm:pb-0 sm:pt-40">
+        <div className="flex h-full  max-w-96 flex-grow flex-col justify-end px-8 sm:px-0 pb-12 pt-4 text-right sm:pb-0 sm:pt-40">
           <h3 className="text-3xl font-bold leading-[42px] text-violet-700">
             Consistent Practice
           </h3>
@@ -106,7 +106,7 @@ export default function HomePage() {
             correct="tan"
           />
         </div>
-        <div className="flex h-full max-w-96 flex-col justify-start pt-12 text-left sm:pb-40 sm:pt-0">
+        <div className="flex h-full max-w-96 flex-col justify-start pt-12 px-8 sm:px-0 text-left sm:pb-40 sm:pt-0">
           <h3 className="text-3xl font-bold leading-[42px] text-violet-700">
             Contextual Learning
           </h3>
@@ -119,7 +119,7 @@ export default function HomePage() {
       </div>
 
       <div className="flex w-full flex-col items-center justify-center gap-6 bg-blue-50 px-10 pb-12 pt-8 sm:py-16">
-        <h2 className="text-center text-[45px] font-bold text-violet-700">
+        <h2 className="text-left text-[45px] font-bold text-violet-700">
           In Context + Integrated Learning ={" "}
           <span className="inline-flex h-full align-middle">
             <Image
