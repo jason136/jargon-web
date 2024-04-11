@@ -53,7 +53,7 @@ export default function Typing({ phrases }: { phrases: string[] }) {
 
   return (
     <div ref={textElement} className="h-full">
-      <h1 className="bg-gradient-to-r from-indigo-400 to-violet-700 bg-clip-text text-center text-[65px] font-bold text-transparent">
+      <h1 className="bg-gradient-to-r from-indigo-400 to-violet-700 bg-clip-text text-center text-[26px] sm:text-[65px] font-bold text-transparent">
         while you {text}
       </h1>
     </div>

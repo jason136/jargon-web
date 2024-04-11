@@ -25,7 +25,7 @@ export default function Question({
   };
 
   return (
-    <div className="h-max w-[275px] items-center justify-center rounded-[20px] bg-white shadow-lg shadow-slate-300">
+    <div className="h-max w-[275px] items-center justify-center rounded-[20px] bg-white shadow-lg">
       <div className="px-6 py-5">
         <div className="flex h-max w-full flex-row">
           <div className="relative h-[18px] w-full rounded-[20px] bg-violet-100">

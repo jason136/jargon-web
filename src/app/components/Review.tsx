@@ -10,8 +10,8 @@ export default function Review({
   review: string;
 }) {
   return (
-    <div className="w-[275px] items-center justify-center rounded-[20px] bg-white shadow-lg shadow-slate-300">
-      <div className="px-6 py-5">
+    <div className="w-[275px] items-center justify-center rounded-[20px] bg-white shadow-lg">
+      <div className="px-5 py-4 sm:px-6 sm:py-5">
         <div className="flex w-full flex-row">
           <div className="h-[18px] w-full rounded-[20px] bg-violet-700" />
           <Image
@@ -28,7 +28,7 @@ export default function Review({
           <div className="text-[13px] font-semibold text-zinc-500">{lang}</div>
         </div>
 
-        <div className="text-black text-[15px] font-normal">
+        <div className="text-black text-[13px] sm:text-[15px] font-normal">
           {review}
         </div>
       </div>
