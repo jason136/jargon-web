@@ -8,16 +8,27 @@ import Typing from "./components/Typing";
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start overflow-hidden bg-violet-100">
-      <div className="flex w-full flex-row items-center justify-between px-8 py-4 pb-40">
-        <Link href="/">
-          <Image src="/jargon.png" alt="Jargon Logo" width={166} height={57} />
-        </Link>
+      <div className="flex w-full flex-row items-center justify-between px-8 py-4 pb-32 sm:pb-40">
+        <div className="flex flex-col sm:flex-row items-center sm:gap-4">
+          <Link className="" href="/">
+            <Image
+              className="w-[214px] h-[74px] sm:w-[166px] sm:h-[57px]"
+              src="/jargon.png"
+              alt="Jargon Logo"
+              width={166}
+              height={57}
+            />
+          </Link>
+          <div className="text-center text-2xl font-medium leading-[33px] text-indigo-400">
+            In-Context Language Learning for Everyday Use
+          </div>
+        </div>
         <Link
-          className="flex h-11 w-56 cursor-pointer flex-row items-center justify-center gap-2 rounded-[20px] bg-violet-700 px-6 py-2"
+          className="hidden sm:flex flex-row items-center justify-center gap-2 rounded-[20px] bg-violet-700 px-6 py-2"
           href="https://docs.google.com/forms/d/e/1FAIpQLSfOcYOZsjZXoeZE8HIHk7VW8bVGG6k4SjpuWFcQabo31zzotA/viewform"
           target="_blank"
         >
-          <div className="text-nowrap text-[15px] font-semibold text-white">
+          <div className="whitespace-nowrap text-nowrap text-[15px] font-semibold text-white">
             Join Our Waitlist
           </div>
           <Image
@@ -64,7 +75,7 @@ export default function HomePage() {
         ]}
       />
 
-      <div className="flex flex-col items-start justify-start gap-4 pt-20">
+      <div className="flex flex-col items-start justify-start gap-4 px-10 pt-20">
         <h2 className="bg-violet-300 text-left text-4xl font-bold text-zinc-500">
           Why is language learning so hard?
         </h2>
@@ -76,9 +87,9 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="flex w-full flex-row justify-between py-16">
+      <div className="flex w-full flex-col items-center justify-between py-16 sm:flex-row">
         <div></div>
-        <div className="flex max-w-96 flex-grow flex-col justify-end pb-8 text-right">
+        <div className="flex h-full  max-w-96 flex-grow flex-col justify-end pb-12 pt-4 text-right sm:pb-0 sm:pt-40">
           <h3 className="text-3xl font-bold leading-[42px] text-violet-700">
             Consistent Practice
           </h3>
@@ -92,10 +103,10 @@ export default function HomePage() {
             progress={50}
             sentence="¿Por qué es ____ difícil aprender un idioma?"
             options={["muy", "tan", "esto", "demasido"]}
-            correct="muy"
+            correct="tan"
           />
         </div>
-        <div className="flex max-w-96 flex-col justify-start pt-8 text-left">
+        <div className="flex h-full max-w-96 flex-col justify-start pt-12 text-left sm:pb-40 sm:pt-0">
           <h3 className="text-3xl font-bold leading-[42px] text-violet-700">
             Contextual Learning
           </h3>
@@ -107,8 +118,8 @@ export default function HomePage() {
         <div></div>
       </div>
 
-      <div className="flex w-full flex-col items-center justify-center gap-6 bg-blue-50 py-16">
-        <h2 className="text-[45px] font-bold text-violet-700">
+      <div className="flex w-full flex-col items-center justify-center gap-6 bg-blue-50 px-10 pb-12 pt-8 sm:py-16">
+        <h2 className="text-center text-[45px] font-bold text-violet-700">
           In Context + Integrated Learning ={" "}
           <span className="inline-flex h-full align-middle">
             <Image
@@ -120,7 +131,7 @@ export default function HomePage() {
           </span>
         </h2>
 
-        <p className="max-w-[1100px] text-center text-[26px] font-medium leading-9 text-zinc-500">
+        <p className="max-w-[1100px] text-left text-[26px] font-medium leading-9 text-zinc-500 sm:text-center">
           Jargon integrates learning into your browsing experience: whether you
           are checking emails, reading the news, doing work or even scrolling
           through Reddit threads, you can learn new vocabularies and phrases
@@ -128,7 +139,7 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="flex w-full flex-row items-center justify-between pb-20 pt-24">
+      <div className="flex w-full flex-col items-center justify-between pt-12 sm:flex-row sm:pb-20 sm:pt-24">
         <div></div>
         <div></div>
         {[
@@ -137,40 +148,37 @@ export default function HomePage() {
             lang: "🇪🇸 Spanish Learner",
             review:
               "I started using Jargon right before my college Spanish proficiency test— I ended up placing at the highest level! The constant practice and varied contexts definitely helped.",
-            tilt: -5.92,
-            y_offset: -30,
+            tilt: "rotate-[-5.92deg]",
+            offset:
+              "translate-x-[-30px] sm:translate-x-0 sm:translate-y-[-30px]",
           },
           {
             name: "David",
             lang: "🇫🇷 French Learner",
             review:
               "I get to turn my mindless web-surfing into something productive! Definitely a lot more interesting than the exercises I pored over in high school.",
-            tilt: 5.61,
-            y_offset: 30,
+            tilt: "rotate-[5.61deg]",
+            offset: "translate-x-[30px] sm:translate-x-0 sm:translate-y-[30px]",
           },
           {
             name: "Stephen",
             lang: "🇨🇳 Chinese Learner",
             review:
               "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I’m learning.",
-            tilt: -4.85,
-            y_offset: -30,
+            tilt: "rotate-[-4.85deg]",
+            offset:
+              "translate-x-[-30px] sm:translate-x-0 sm:translate-y-[-30px]",
           },
           {
             name: "Lucy",
             lang: "🇪🇸 Spanish Learner",
             review:
               "As someone gearing up to study abroad, Jargon has made me more confident than any pocket dictionary in navigating a city, reading instructions, and more all in a foreign language!",
-            tilt: 1.57,
-            y_offset: 30,
+            tilt: "rotate-[1.57deg]",
+            offset: "translate-x-[30px] sm:translate-x-0 sm:translate-y-[30px]",
           },
         ].map((rev, index) => (
-          <div
-            key={index}
-            style={{
-              transform: `rotate(${rev.tilt}deg) translateY(${rev.y_offset}px)`,
-            }}
-          >
+          <div key={index} className={`${rev.tilt} ${rev.offset} pb-8 sm:pb-0`}>
             <Review name={rev.name} lang={rev.lang} review={rev.review} />
           </div>
         ))}
@@ -178,7 +186,7 @@ export default function HomePage() {
         <div></div>
       </div>
 
-      <h2 className="pb-8 text-[45px] font-bold text-neutral-700">
+      <h2 className="pb-8 text-center text-[45px] font-bold text-neutral-700">
         People love{" "}
         <span className="inline-flex h-full align-middle">
           <Image
@@ -192,57 +200,53 @@ export default function HomePage() {
         !!
       </h2>
 
-      <div className="flex w-full flex-row items-center justify-between bg-violet-200 px-20 py-8">
+      <div className="flex w-full flex-row items-center justify-center bg-violet-200 px-20 py-8 sm:justify-between">
         <Image
-          className=""
+          className="hidden sm:flex"
           src="/jargon.png"
           alt="Jargon Logo"
           width={262}
           height={91}
         />
-        <div className="flex items-center gap-6">
-          <Link
-            href="https://www.instagram.com/jargonlearn"
-            target="_blank"
-          >
-            <Image
-              className=""
-              src="/instagram.svg"
-              alt="Instagram Icon"
-              width={56}
-              height={56}
-            />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/jargon-learn/"
-            target="_blank"
-          >
-            <Image
-              className=""
-              src="/linkedin.svg"
-              alt="Linkedin Icon"
-              width={56}
-              height={56}
-            />
-          </Link>
-          <Link
-            href="mailto:jargonlearn@gmail.com"
-            target="_blank"
-          >
-            <Image
-              className=""
-              src="/email.svg"
-              alt="Email Logo"
-              width={56}
-              height={56}
-            />
-          </Link>
+        <div className="flex flex-col items-center gap-6 sm:flex-row">
+          <div className="flex flex-row gap-6">
+            <Link href="https://www.instagram.com/jargonlearn" target="_blank">
+              <Image
+                className=""
+                src="/instagram.svg"
+                alt="Instagram Icon"
+                width={56}
+                height={56}
+              />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/jargon-learn/"
+              target="_blank"
+            >
+              <Image
+                className=""
+                src="/linkedin.svg"
+                alt="Linkedin Icon"
+                width={56}
+                height={56}
+              />
+            </Link>
+            <Link href="mailto:jargonlearn@gmail.com" target="_blank">
+              <Image
+                className=""
+                src="/email.svg"
+                alt="Email Logo"
+                width={56}
+                height={56}
+              />
+            </Link>
+          </div>
           <Link
             className="flex h-14 flex-row items-center justify-center gap-2 rounded-[40px] bg-violet-700 px-12 py-4"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfOcYOZsjZXoeZE8HIHk7VW8bVGG6k4SjpuWFcQabo31zzotA/viewform"
             target="_blank"
           >
-            <div className="text-nowrap text-[22px] font-medium text-white">
+            <div className="whitespace-nowrap text-nowrap text-[22px] font-medium text-white">
               Join Our Waitlist
             </div>
             <Image

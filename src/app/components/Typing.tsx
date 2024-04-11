@@ -14,9 +14,9 @@ export default function Typing({ phrases }: { phrases: string[] }) {
       setIndex((index + 1) % phrases.length);
     } else if (count > 5 + 2 * textLen + 40) {
       if (text.length > 0) {
-        let newText = text.slice(0, -1)
-        if (newText.length > 0 && newText.endsWith(' ')) {
-            newText = newText.slice(0, -1)
+        let newText = text.slice(0, -1);
+        if (newText.length > 0 && newText.endsWith(" ")) {
+          newText = newText.slice(0, -1);
         }
         setText(newText);
       }
@@ -31,8 +31,10 @@ export default function Typing({ phrases }: { phrases: string[] }) {
   }, [count]);
 
   return (
-    <h1 className="bg-gradient-to-r from-indigo-400 to-violet-700 bg-clip-text text-center text-[65px] font-bold text-transparent">
-      while you {text}
-    </h1>
+    <div className="h-full">
+      <h1 className="bg-gradient-to-r from-indigo-400 to-violet-700 bg-clip-text text-center text-[65px] font-bold text-transparent">
+        while you {text}
+      </h1>
+    </div>
   );
 }
