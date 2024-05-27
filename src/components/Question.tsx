@@ -1,6 +1,6 @@
 "use client";
 
-import ButtonChoice from "./Primative/ButtonChoice";
+import ButtonChoice from "./primitive/ButtonChoice";
 import { useState } from "react";
 import Image from "next/image";
 
