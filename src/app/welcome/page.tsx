@@ -11,7 +11,7 @@ export default function WelcomePage() {
         Click confirm to get your account all set up!
       </h3>
 
-      <video className="w-[230px] h-[282px]" width="230" height="282" loop playsInline preload="auto" autoPlay>
+      <video className="w-[230px] h-[282px]" width="230" height="282" loop playsInline preload="auto" autoPlay muted>
         <source src="/jaranimation.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
