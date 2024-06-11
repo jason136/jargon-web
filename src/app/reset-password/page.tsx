@@ -1,5 +1,6 @@
 "use client";
 import { supabase } from '~/utils/supabase';
+import { supabase } from '~/utils/supabase';
 import { useState } from "react";
 import TextInput from "~/components/primitive/TextInput";
 
