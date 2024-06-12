@@ -29,7 +29,7 @@ export default function PrivacyPage() {
             <li> <strong> Browsing Activity </strong>: URLs of websites you visit and their content to generate language learning questions.</li>
             <li> <strong>Interaction Data: Frequency and timing of interactions with the extension.</strong></li>
             <li> <strong>Preferences and Settings</strong>: Your language preferences, permissions for accessing different websites, and usage settings within the extension.</li>
-            <li> <strong>Data Collection by Third-Party Services</strong>: We utilize various third-party services to provide functionalities and improve our platform. These third-party services may collect certain user information independently in accordance with their own privacy policies. While we do not directly collect this information, we encourage you to review the privacy policies of these third-party services to understand how they handle user data. For example: Supabase: We use Supabase for our database needs. Supabase collects user IP addresses for security purposes. You can find more information about Supabase&apos;s privacy practices in their privacy policy located here: https://supabase.com/privacy.</li>
+            <li> <strong>Data Collection by Third-Party Services</strong>: We utilize various third-party services to provide functionalities and improve our platform. These third-party services may collect certain user information independently in accordance with their own privacy policies. While we do not directly collect this information, we encourage you to review the privacy policies of these third-party services to understand how they handle user data. For example: Supabase: We use Supabase for our database needs. Supabase collects user IP addresses for security purposes. You can find more information about Supabase&apos;s privacy practices in their privacy policy located here: <a href='https://supabase.com/privacy'>https://supabase.com/privacy</a>.</li>
             <li>Jargon utilizes third-party services, such as GPT-4 Turbo and assistants API, to generate personalized learning content for you. These services may collect and use your data in accordance with their own privacy policies. We recommend that you review the privacy policies of these services to understand their data practices.</li>
 
             </ul>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
 
             </ul>
 
-            <strong>Your Choices</strong>
+            <strong>Your Choices</strong><br/>
 
             You can control your data and preferences by:
 
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
 
             <h3>7. How Can You Contact Us?</h3>
 
-            If you have any questions about this Policy or would like to exercise your data subject rights, please contact us at [support@jargonlearn.com](mailto:support@jargonlearn.com). .
+            If you have any questions about this Policy or would like to exercise your data subject rights, please contact us at <a href='mailto:support@jargonlearn.com'>support@jargonlearn.com</a>.
 
             <h3>8. Who Do We Share Your Personal Data With, and Why? How do we use your Personal Data?</h3>
 
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
 
             <h3>11. California Privacy Rights</h3>
 
-            <p>California residents have specific rights regarding their personal information under the California Consumer Privacy Act (CCPA). This section describes those rights and explains how to exercise them. You can learn more about these rights at the California Attorney General&apos;s website https://oag.ca.gov/privacy/ccpa.</p>
+            <p>California residents have specific rights regarding their personal information under the California Consumer Privacy Act (CCPA). This section describes those rights and explains how to exercise them. You can learn more about these rights at the California Attorney General&apos;s website <a href='https://oag.ca.gov/privacy/ccpa'>https://oag.ca.gov/privacy/ccpa</a>.</p>
 
             If you are a California resident, you have the right to:
 
@@ -243,7 +243,7 @@ export default function PrivacyPage() {
 
             <h3>14. Consent</h3>
 
-            <p>We may obtain your consent to our collection, use, and disclosure of your Personal Data either expressly, for stated purposes, or impliedly when the purposes are indicated by the relevant circumstances or follow logically from other stated purposes. Before collecting browsing activity and interaction data, we will explicitly request your consent. You will be able to adjust your consent preferences or opt-out at any time through the extension settings. By providing us with your Personal Data, you consent to the collection, use, and disclosure of that information relating to providing our services, managing our relationship with you, administering our business, and as permitted or required by law, in accordance with this Policy. We rely on the GDPR’s “legitimate interests” rule as authorization to process your Personal Data where the circumstances and uses of such processing are known to or would be expected by you in connection with your access and uses of our services, in particular as set out in this Policy, provided that we will always seek your express, actively provided consent in instances where we propose to process your information for purposes of profiling, tracking, advertising, or publication or if the information would be considered sensitive. We will seek your consent before using Personal Data for any purpose beyond the scope of your original consent or our stated purposes. You may withdraw your consent or request us to stop processing your Personal Data at any time, subject to legal and contractual restrictions and reasonable notice, by contacting us at support@jargonlearn.com or by visiting our consent and opt-out page.</p>
+            <p>We may obtain your consent to our collection, use, and disclosure of your Personal Data either expressly, for stated purposes, or impliedly when the purposes are indicated by the relevant circumstances or follow logically from other stated purposes. Before collecting browsing activity and interaction data, we will explicitly request your consent. You will be able to adjust your consent preferences or opt-out at any time through the extension settings. By providing us with your Personal Data, you consent to the collection, use, and disclosure of that information relating to providing our services, managing our relationship with you, administering our business, and as permitted or required by law, in accordance with this Policy. We rely on the GDPR’s “legitimate interests” rule as authorization to process your Personal Data where the circumstances and uses of such processing are known to or would be expected by you in connection with your access and uses of our services, in particular as set out in this Policy, provided that we will always seek your express, actively provided consent in instances where we propose to process your information for purposes of profiling, tracking, advertising, or publication or if the information would be considered sensitive. We will seek your consent before using Personal Data for any purpose beyond the scope of your original consent or our stated purposes. You may withdraw your consent or request us to stop processing your Personal Data at any time, subject to legal and contractual restrictions and reasonable notice, by contacting us at <a href='mailto:support@jargonlearn.com'>support@jargonlearn.com</a> or by visiting our consent and opt-out page.</p>
 
             <hr></hr>
 
