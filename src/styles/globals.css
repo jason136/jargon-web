@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    h1 {
+      @apply text-3xl;
+      @apply font-bold;
+      @apply mb-2;
+    }
+    h2 {
+      @apply text-xl;
+      @apply font-bold;
+      @apply mb-2;
+    }
+    h3 {
+        @apply text-lg;
+        @apply font-bold;
+        @apply mb-4;
+    }
+    ul, ol {
+        list-style: revert;
+        @apply ml-8;
+    }
+    li {
+        @apply mb-2;
+    }
+    p {
+        @apply mb-2;
+    }
+  }
