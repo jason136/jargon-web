@@ -28,7 +28,7 @@ export default function Review({
           <div className="text-[13px] font-semibold text-zinc-500">{lang}</div>
         </div>
 
-        <div className="text-black text-[13px] sm:text-[15px] font-normal">
+        <div className="text-[13px] font-normal text-black sm:text-[15px]">
           {review}
         </div>
       </div>

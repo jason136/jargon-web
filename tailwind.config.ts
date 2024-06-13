@@ -22,15 +22,15 @@ const config: Config = {
   plugins: [
     function ({ addUtilities }: any) {
       const newUtilities = {
-        '.pause': {
-          animationPlayState: 'paused',
+        ".pause": {
+          animationPlayState: "paused",
         },
-        '.running': {
-          animationPlayState: 'running',
+        ".running": {
+          animationPlayState: "running",
         },
-      }
-      addUtilities(newUtilities, ['hover', 'focus'])
-    }
+      };
+      addUtilities(newUtilities, ["hover", "focus"]);
+    },
   ],
 };
 

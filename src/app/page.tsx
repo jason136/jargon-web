@@ -28,7 +28,7 @@ export default function HomePage() {
         <Image src="/jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
       </Link>
       <Image
-        className="h-[245px] w-[320px] sm:h-[338px] sm:w-[435px] object-contain"
+        className="h-[245px] w-[320px] object-contain sm:h-[338px] sm:w-[435px]"
         src="/half_jar.svg"
         alt="Half Jar Icon"
         height={612}
@@ -49,7 +49,7 @@ export default function HomePage() {
         ]}
       />
 
-      <div className="flex flex-col items-start justify-start w-screen max-w-[1250px] gap-2 px-10 pt-20 sm:gap-4">
+      <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4">
         <h2 className="bg-violet-300 text-left text-[18px] font-bold text-zinc-500 sm:text-4xl">
           Why is language learning so hard?
         </h2>
@@ -97,7 +97,7 @@ export default function HomePage() {
           In Context + Integrated Learning ={" "}
           <span className="inline-flex h-full align-middle">
             <Image
-              className="h-[42px] w-[130px] sm:h-[66px] sm:w-[190px] object-contain"
+              className="h-[42px] w-[130px] object-contain sm:h-[66px] sm:w-[190px]"
               src="/jargon.png"
               alt="Jargon Logo"
               width={190}
@@ -139,7 +139,7 @@ export default function HomePage() {
             name: "Stephen",
             lang: "🇨🇳 Chinese Learner",
             review:
-              "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I’m learning.",
+              "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I&apos;m learning.",
             tilt: "rotate-[-4.85deg]",
             offset:
               "translate-x-[-30px] sm:translate-x-0 sm:translate-y-[-30px]",
@@ -165,7 +165,7 @@ export default function HomePage() {
         People love{" "}
         <span className="inline-flex h-full align-middle">
           <Image
-            className="h-[42px] w-[130px] sm:h-[66px] sm:w-[190px] object-contain"
+            className="h-[42px] w-[130px] object-contain sm:h-[66px] sm:w-[190px]"
             src="/jargon.png"
             alt="Jargon Logo"
             width={190}
