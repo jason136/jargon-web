@@ -3,30 +3,33 @@
 @tailwind utilities;
 
 @layer base {
-  .markup h1 {
-    @apply text-3xl;
-    @apply font-bold;
-    @apply mb-2;
+    h1 {
+      @apply text-3xl;
+      @apply font-bold;
+      @apply mb-2;
+    }
+    h2 {
+      @apply text-xl;
+      @apply font-bold;
+      @apply mb-2;
+    }
+    h3 {
+        @apply text-lg;
+        @apply font-bold;
+        @apply mb-4;
+    }
+    ul, ol {
+        list-style: revert;
+        @apply ml-8;
+    }
+    li {
+        @apply mb-2;
+    }
+    p {
+        @apply mb-2;
+    }
+    a{
+        @apply underline;
+        @apply text-violet-700;
+    }
   }
-  .markup h2 {
-    @apply text-xl;
-    @apply font-bold;
-    @apply mb-2;
-  }
-  .markup h3 {
-    @apply text-lg;
-    @apply font-bold;
-    @apply mb-4;
-  }
-  .markup ul,
-  .markup ol {
-    list-style: revert;
-    @apply ml-8;
-  }
-  .markup li {
-    @apply mb-2;
-  }
-  .markup p {
-    @apply mb-2;
-  }
-}
