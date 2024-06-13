@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+<<<<<<< HEAD
     h1 {
       @apply text-3xl;
       @apply font-bold;
@@ -33,3 +34,32 @@
         @apply text-violet-700;
     }
   }
+=======
+  .markup h1 {
+    @apply text-3xl;
+    @apply font-bold;
+    @apply mb-2;
+  }
+  .markup h2 {
+    @apply text-xl;
+    @apply font-bold;
+    @apply mb-2;
+  }
+  .markup h3 {
+    @apply text-lg;
+    @apply font-bold;
+    @apply mb-4;
+  }
+  .markup ul,
+  .markup ol {
+    list-style: revert;
+    @apply ml-8;
+  }
+  .markup li {
+    @apply mb-2;
+  }
+  .markup p {
+    @apply mb-2;
+  }
+}
+>>>>>>> 5bdeeaafc57a548d173c7b8e6c9f0fa97f63bd4e
