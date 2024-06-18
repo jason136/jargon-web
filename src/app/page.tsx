@@ -28,7 +28,7 @@ export default function HomePage() {
         <Image src="/jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
       </Link>
       <Image
-        className="h-[245px] w-[320px] sm:h-[338px] sm:w-[435px] object-contain"
+        className="h-[245px] w-[320px] object-contain sm:h-[338px] sm:w-[435px]"
         src="/half_jar.svg"
         alt="Half Jar Icon"
         height={612}
@@ -49,7 +49,7 @@ export default function HomePage() {
         ]}
       />
 
-      <div className="flex flex-col items-start justify-start w-screen max-w-[1250px] gap-2 px-10 pt-20 sm:gap-4">
+      <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4">
         <h2 className="bg-violet-300 text-left text-[18px] font-bold text-zinc-500 sm:text-4xl">
           Why is language learning so hard?
         </h2>
