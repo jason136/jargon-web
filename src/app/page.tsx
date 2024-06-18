@@ -97,7 +97,7 @@ export default function HomePage() {
           In Context + Integrated Learning ={" "}
           <span className="inline-flex h-full align-middle">
             <Image
-              className="h-[42px] w-[130px] sm:h-[66px] sm:w-[190px] object-contain"
+              className="h-[42px] w-[130px] object-contain sm:h-[66px] sm:w-[190px]"
               src="/jargon.png"
               alt="Jargon Logo"
               width={190}
@@ -139,7 +139,7 @@ export default function HomePage() {
             name: "Stephen",
             lang: "🇨🇳 Chinese Learner",
             review:
-              "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I’m learning.",
+              "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I&apos;m learning.",
             tilt: "rotate-[-4.85deg]",
             offset:
               "translate-x-[-30px] sm:translate-x-0 sm:translate-y-[-30px]",
@@ -165,7 +165,7 @@ export default function HomePage() {
         People love{" "}
         <span className="inline-flex h-full align-middle">
           <Image
-            className="h-[42px] w-[130px] sm:h-[66px] sm:w-[190px] object-contain"
+            className="h-[42px] w-[130px] object-contain sm:h-[66px] sm:w-[190px]"
             src="/jargon.png"
             alt="Jargon Logo"
             width={190}

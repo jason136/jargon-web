@@ -77,12 +77,7 @@ export default function Question({
             />
           </button>
           <button>
-            <Image
-              src="/target.svg"
-              alt="Target Icon"
-              height={24}
-              width={24}
-            />
+            <Image src="/target.svg" alt="Target Icon" height={24} width={24} />
           </button>
           <button>
             <Image
