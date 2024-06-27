@@ -2,8 +2,8 @@ import React from "react";
 
 export default function TermsOfService() {
   return (
-    <div className="markup font-quicksand my-10 h-full w-full flex-col px-10">
-      <h1>Jargon&apos;s Terms of Service</h1>
+    <div className="font-quicksand my-10 h-full w-full flex-col px-10">
+      <h1>Jargon’s Terms of Service</h1>
       <h2>TERMS OF USE</h2>
       Last Revised on June 1, 2024.
       <p>
@@ -16,10 +16,10 @@ export default function TermsOfService() {
         “Extension”) (collectively, the “Services”) provided by Jargon
         (“Company”, “we” or “us” or “Jargon”). We are currently in the process
         of forming a legal entity and will update this Policy with the official
-        business name upon registration. The Extension is a software application
-        that integrates language learning into your browsing experience. The
-        &apos;Jar&apos; is a database within the Extension where users can see
-        learned vocabulary and review completed quizzes.
+        business name upon registration.  The Extension is a software
+        application that integrates language learning into your browsing
+        experience. The &apos;Jar&apos; is a database within the Extension where
+        users can see learned vocabulary and review completed quizzes.
       </p>
       <p>
         These Terms govern your access to and use of the Services. Please read
@@ -34,7 +34,7 @@ export default function TermsOfService() {
         entity then “you” includes you and that entity, and you represent and
         warrant that (a) you are an authorized representative of the entity with
         the authority to bind the entity to these Terms, and (b) you agree to
-        these Terms on the entity&apos;s behalf.
+        these Terms on the entity’s behalf.
       </p>
       <p>
         Please note that Section 10 contains an arbitration clause and class
@@ -51,9 +51,9 @@ export default function TermsOfService() {
       Government embargo, or that has not been designated by the U.S. Government
       as a “terrorist supporting” country to use the Services. Minors under the
       age of majority in their jurisdiction but that are at least 13 years of
-      age are only permitted to use the Services if the minor&apos;s parent or
-      guardian accepts these Terms on the minor&apos;s behalf prior to use of
-      the Services. Children under the age of 13 are not permitted to use the
+      age are only permitted to use the Services if the minor’s parent or
+      guardian accepts these Terms on the minor’s behalf prior to use of the
+      Services. Children under the age of 13 are not permitted to use the
       Services. By using the Services, you represent and warrant that you meet
       these requirements.
       <h3>2. USER ACCOUNTS</h3>
@@ -167,9 +167,9 @@ export default function TermsOfService() {
         <li>
           access or use the Services in any manner that could disable,
           overburden, damage, disrupt or impair the Services or interfere with
-          any other party&apos;s access to or use of the Services or use any
-          device, software or routine that causes the same, including by running
-          any Maillist, Listserv, any form of auto-responder or “spam” on the
+          any other party’s access to or use of the Services or use any device,
+          software or routine that causes the same, including by running any
+          Maillist, Listserv, any form of auto-responder or “spam” on the
           Services, or any processes that run or are activated while you are not
           logged into the Services, or that otherwise interfere with the proper
           working of the Services or that would bypass the navigational
@@ -188,9 +188,9 @@ export default function TermsOfService() {
           technological measure or content protections of the Services;
         </li>
         <li>
-          jeopardize the security of your Account or any other user&apos;s
-          account (such as by allowing someone who is not you to log in to the
-          Services as you);
+          jeopardize the security of your Account or any other user’s account
+          (such as by allowing someone who is not you to log in to the Services
+          as you);
         </li>
         <li>
           use any robot, spider, crawlers or other automatic device, process,
@@ -264,7 +264,7 @@ export default function TermsOfService() {
         property right) that you may have in and to any and all Feedback. For
         the avoidance of doubt, Jargon will hold ownership of the Feedback and
         any content you submit through the Extension (&quot;User-Generated
-        Content&quot;). This includes, but is not limited to, adding your own
+        Content&quot;).  This includes, but is not limited to, adding your own
         vocabulary terms or modifying existing quizzes within the
         &quot;Jar.&quot; By submitting User-Generated Content, you agree that
         your User-Generated Content may be displayed to other users within the
@@ -295,8 +295,8 @@ export default function TermsOfService() {
       responsibility to you or any other person or entity for any Services or
       Third-Party Materials. Third-Party Materials and links thereto are
       provided solely as a convenience to you and you access and use them
-      entirely at your own risk and subject to such third parties&apos; terms
-      and conditions.
+      entirely at your own risk and subject to such third parties’ terms and
+      conditions.
       <h3>8. DISCLAIMERS AND LIMITATION OF LIABILITY</h3>
       <p>
         THE SERVICES AND ANY CONTENT, MATERIALS, USER CONTENT, FEATURES OR
@@ -378,23 +378,23 @@ export default function TermsOfService() {
       ACTION (WHETHER IN CONTRACT, TORT, OR OTHERWISE), SHALL BE LIMITED TO THE
       LESSER OF (A) THE AMOUNT YOU PAID TO JARGON FOR THE SERVICES IN THE
       PRECEDING THREE MONTHS, OR (B) $100.00. SOME JURISDICTIONS DO NOT ALLOW
-      THE LIMITATION OR EXCLUSION OF CERTAIN WARRANTIES OR DAMAGES. IF THESE
+      THE LIMITATION OR EXCLUSION OF CERTAIN WARRANTIES OR DAMAGES.  IF THESE
       RESTRICTIONS APPLY TO YOU, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY.
       <h3>9. INDEMNIFICATION</h3>
       You agree that you shall defend, indemnify and hold us and our affiliates
       and each of our and their respective officers, directors, employees,
       contractors, agents, licensors, and suppliers (the “Company Entities”)
       harmless from and against any and all claims, costs, damages, losses,
-      liabilities, and expenses (including attorneys&apos; fees and costs)
-      incurred by the Company Entities arising out of or in connection with: (a)
-      your violation or breach of any term of these Terms or any applicable law
-      or regulation; (b) your violation of any rights of any third party,
-      including but not limited to intellectual property rights or privacy
-      rights; (c) your access to or use of the Services, including but not
-      limited to misuse of the quiz creation feature or generation of
-      inappropriate user-generated content; or (d) your negligence or wilful
-      misconduct, including but not limited to the submission of misleading or
-      false information within quizzes or User-Generated Content.
+      liabilities, and expenses (including attorneys’ fees and costs) incurred
+      by the Company Entities arising out of or in connection with: (a) your
+      violation or breach of any term of these Terms or any applicable law or
+      regulation; (b) your violation of any rights of any third party, including
+      but not limited to intellectual property rights or privacy rights; (c)
+      your access to or use of the Services, including but not limited to misuse
+      of the quiz creation feature or generation of inappropriate user-generated
+      content; or (d) your negligence or wilful misconduct, including but not
+      limited to the submission of misleading or false information within
+      quizzes or User-Generated Content.
       <h3>10. ARBITRATION AND CLASS ACTION WAIVER</h3>
       <p>
         <strong>Informal Process First.</strong> You agree that in the event of
@@ -467,8 +467,11 @@ export default function TermsOfService() {
         addition to these Terms, you agree to comply with all applicable Google
         Chrome Web Store Policies, including but not limited to the Developer
         Distribution Agreement and the Program Policies. These policies are
-        available at
-        https://developer.chrome.com/docs/webstore/program-policies.
+        available at{" "}
+        <a href="https://developer.chrome.com/docs/webstore/program-policies">
+          https://developer.chrome.com/docs/webstore/program-policies
+        </a>
+        .
       </p>
       <p>
         <strong>Termination of License and Your Account.</strong> Your access to
@@ -528,11 +531,11 @@ export default function TermsOfService() {
       Government as a “terrorist supporting” country, or (b) to anyone listed on
       any U.S. Government list of prohibited or restricted parties, including
       the U.S. Treasury Department&apos;s list of Specially Designated Nationals
-      or the U.S. Department of Commerce Denied Person&apos;s List or Entity
-      List. By using the Services, you represent and warrant that you are not
-      located in any such country or on any such list. You are responsible for
-      and hereby agree to comply at your sole expense with all applicable United
-      States export laws and regulations.
+      or the U.S. Department of Commerce Denied Person’s List or Entity List. By
+      using the Services, you represent and warrant that you are not located in
+      any such country or on any such list. You are responsible for and hereby
+      agree to comply at your sole expense with all applicable United States
+      export laws and regulations.
       <p>
         <strong>Assignment.</strong> Your contractual relationship with us and
         the licenses granted hereunder may be freely assigned by us, including

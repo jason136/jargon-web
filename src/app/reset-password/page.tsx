@@ -41,7 +41,7 @@ export default function ResetPasswordPage() {
         Reset Your Password
       </h2>
 
-      <div className="w-1/3 min-w-80 space-y-3 pb-8 pt-6">
+      <div className="w-1/5 min-w-80 space-y-5 pb-8 pt-6">
         <TextInput
           labelText="New Password"
           inputText="An 8+ character password"
