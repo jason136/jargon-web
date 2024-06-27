@@ -56,7 +56,9 @@ export default function RootLayout({
             </Link>
           </div>
 
-          <div className="flex flex-grow flex-col w-full justify-center items-center">{children}</div>
+          <div className="flex w-full flex-grow flex-col items-center justify-center">
+            {children}
+          </div>
 
           <div className="flex w-screen flex-row items-center justify-center bg-violet-200 px-20 py-8 sm:justify-between">
             <Image
