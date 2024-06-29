@@ -22,7 +22,7 @@ export default function HomePage() {
 
       <Link
         className="mt-10 h-[64px] w-[218px] sm:mt-12 sm:h-[85px] sm:w-[290px]"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSfOcYOZsjZXoeZE8HIHk7VW8bVGG6k4SjpuWFcQabo31zzotA/viewform"
+        href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj"
         target="_blank"
       >
         <Image src="/jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
