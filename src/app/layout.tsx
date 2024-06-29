@@ -41,11 +41,11 @@ export default function RootLayout({
             </div>
             <Link
               className="hidden flex-row items-center justify-center gap-2 rounded-[20px] bg-violet-700 px-6 py-2 sm:flex"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfOcYOZsjZXoeZE8HIHk7VW8bVGG6k4SjpuWFcQabo31zzotA/viewform"
+              href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj"
               target="_blank"
             >
               <div className="whitespace-nowrap text-nowrap text-[15px] font-semibold text-white">
-                Join Our Waitlist
+                Get the Beta!
               </div>
               <Image
                 src="/external_site.svg"
