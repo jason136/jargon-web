@@ -235,7 +235,9 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Service Providers</strong>: For various operational purposes,
-          such as delivery services and tax consultancy.
+          such as delivery services and tax consultancy. For example, <strong>Google Authentication</strong>: 
+          As one of our authentication service providers, we utilize Google’s People API to store your name and 
+          any personal information you’ve made public, as well as associated email for account creation purposes. 
         </li>
       </ul>
       <p>
