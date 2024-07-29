@@ -6,7 +6,7 @@ export default function Sliding({ contents }: { contents: string[] }) {
   const [sliding, setSliding] = useState(true);
 
   return (
-    <div className="flex h-[70px] items-center justify-center bg-indigo-400 sm:h-32">
+    <div className="flex h-[70px] items-center justify-center bg-indigo-400 sm:h-32" style={{ marginTop: "-350px" }}>
       {[0, 1, 2].map((mult) => (
         <div key={mult} className={`flex translate-x-[${mult * 100}%]`}>
           <div className={`animate-slide ${!sliding && "pause"} flex`}>

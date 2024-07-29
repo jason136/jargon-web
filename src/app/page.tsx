@@ -21,21 +21,21 @@ export default function HomePage() {
       />
 
       <Link
-        className="mt-10 h-[64px] w-[218px] sm:mt-12 sm:h-[85px] sm:w-[290px]"
+        className="mt-10 h-[64px] w-[218px] sm:mt-12 sm:h-[84.53px] sm:w-[290px]"
         href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj"
         target="_blank"
       >
         <Image src="/jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
       </Link>
       <Image
-        className="h-[245px] w-[320px] object-contain sm:h-[338px] sm:w-[435px]"
-        src="/half_jar.svg"
+        src="/jar_only.svg"
         alt="Half Jar Icon"
-        height={612}
+        height={300}
         width={435}
       />
 
       <Sliding
+        className="relative -mt-24 -top-1"
         contents={[
           "Spanish 🇪🇸",
           "Italian 🇮🇹",
@@ -48,6 +48,7 @@ export default function HomePage() {
           "Hindi 🇮🇳",
         ]}
       />
+
 
       <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4">
         <h2 className="bg-violet-300 text-left text-[18px] font-bold text-zinc-500 sm:text-4xl">
