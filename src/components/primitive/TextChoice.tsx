@@ -1,14 +1,18 @@
-import star from '../../assets/icons/star.svg'
+import Image from 'next/image'
+
+interface TextChoiceProps {
+  color: 'green' | 'red' | 'grey'
+  disabled: boolean
+  onChange: (input: string) => void
+  icon: string
+}
 
 export default function TextChoice({
   color,
   disabled,
   onChange,
-}: {
-  color: 'green' | 'red' | 'grey'
-  disabled: boolean
-  onChange: (input: string) => void
-}) {
+  icon,
+}: TextChoiceProps) {
   return (
     <div className="jg-flex jg-w-full jg-h-[34px] jg-relative jg-items-center">
       <div
@@ -27,7 +31,7 @@ export default function TextChoice({
         />
 
         {color == 'green' && (
-          <img className="jg-mr-4 jg-w-[18px] jg-h-[18px]" src={star} />
+          <Image src={icon} alt="" width={24} height={24} />
         )}
       </div>
     </div>

@@ -49,7 +49,7 @@ export default function Typing({ phrases }: { phrases: string[] }) {
         setText(text + phrases[index]![Math.round((count - 5) / 2 - 1)]);
       }
     }
-  }, [count]);
+  }, [index, phrases, text, waitForView, setText]);
 
   return (
     <div ref={textElement} className="h-full">

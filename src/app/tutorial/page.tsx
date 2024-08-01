@@ -6,7 +6,22 @@ import Link from 'next/link';
 
 import Question from "../../components/Question";
 
-const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position }) => {
+interface FlexiblePopupProps {
+  text: string;
+  buttonText: string;
+  onButtonClick: () => void;
+  isVisible: boolean;
+  position: string;
+}
+
+interface FinalFlexiblePopupProps {
+  text: string;
+  buttonText: string;
+  isVisible: boolean;
+  position: string;
+}
+
+const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position }: FlexiblePopupProps) => {
   if (!isVisible) return null;
 
   return (
@@ -25,7 +40,7 @@ const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position })
   );
 };
 
-const FinalFlexiblePopup = ({ text, buttonText, isVisible, position }) => {
+const FinalFlexiblePopup = ({ text, buttonText, isVisible, position }: FinalFlexiblePopupProps) => {
   if (!isVisible) return null;
 
   return (
@@ -51,20 +66,20 @@ const FinalPopup = () => {
           <div className="flex items-start mb-4">
             <Image src="/favicon.ico" alt="Jar Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
             <span className="text-sm text-gray-700">
-              You can track progress and review what you've learned in your jar. Once you start answering questions you see while browsing the web, your jar will be filled with more vocabulary!
+              You can track progress and review what you&apos;ve learned in your jar. Once you start answering questions you see while browsing the web, your jar will be filled with more vocabulary!
             </span>
           </div>
           <div className="flex items-start">
             <Image src="/setting.svg" alt="Settings Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
             <span className="text-sm text-gray-700">
-              If you want to change learning preferences, simply click on the "settings" button on the top right
+              If you want to change learning preferences, simply click on the &quot;settings&quot; button on the top right
             </span>
           </div>
         </div>
         <div className="flex justify-center">
           <Link href="https://en.wikipedia.org/wiki/Jargon" target="_blank" rel="noopener noreferrer">
             <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
-              Let's go
+              Let&apos;s go
             </button>
           </Link>
         </div>
@@ -75,7 +90,7 @@ const FinalPopup = () => {
 
 
 
-const TutorialNextPage = ({ onNextClick }) => {
+const TutorialNextPage = () => {    
   const [currentPopup, setCurrentPopup] = useState(0);
   const [showFinalFlexiblePopup, setShowFinalFlexiblePopup] = useState(false);
   const [showFinalPopup, setShowFinalPopup] = useState(false);
@@ -87,7 +102,7 @@ const TutorialNextPage = ({ onNextClick }) => {
       const allElements = document.getElementsByTagName('*');
       for (const element of allElements) {
         if (element.shadowRoot) {
-          const panelOpen = element.shadowRoot.getElementById('panel-open');
+          const panelOpen = element.shadowRoot?.getElementById('panel-open');
           if (panelOpen) {
             setShowFinalPopup(true);
             return;
@@ -119,7 +134,7 @@ const TutorialNextPage = ({ onNextClick }) => {
       position: "right-full mr-[-10px] top-0"
     },
     {
-      text: "The correct answer is saved to your 'jar' after answering the question",
+      text: "The correct answer is saved to your jar after answering the question",
       buttonText: "Sounds good",
       position: "left-full ml-4 top-40 "
     },
@@ -161,17 +176,17 @@ const TutorialNextPage = ({ onNextClick }) => {
         />
         {!showFinalFlexiblePopup && (
           <FlexiblePopup
-            text={popups[currentPopup].text}
-            buttonText={popups[currentPopup].buttonText}
+            text={popups[currentPopup]?.text ?? ''}
+            buttonText={popups[currentPopup]?.buttonText ?? ''}
             onButtonClick={handlePopupButtonClick}
             isVisible={true}
-            position={popups[currentPopup].position}
+            position={popups[currentPopup]?.position ?? ''}
           />
         )}
 
         {showFinalFlexiblePopup && (
           <FinalFlexiblePopup
-            text="Finally, you can access your vocabulary “jar” by clicking here or directly on the extension icon"
+            text="Finally, you can access your vocabulary jar by clicking here or directly on the extension icon"
             buttonText="Click on the extension icon at the top right of your page to open the jar!"
             position="right-full mr-[15px] mt-[-125px] "
             isVisible={true}
@@ -184,13 +199,13 @@ const TutorialNextPage = ({ onNextClick }) => {
   );
 };
 
-const PanelContent = ({ onQuestionAnswered }) => {
+const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }) => {
   const [isQuestionAnswered, setIsQuestionAnswered] = useState(false);
 
   useEffect(() => {
     const checkForAnsweredQuestion = () => {
       const shadowHost = document.getElementById('shadowHost');
-      if (shadowHost && shadowHost.shadowRoot) {
+      if (shadowHost?.shadowRoot) {
         // Look for a button with green or red color, indicating an answer was selected
         const answeredButton = shadowHost.shadowRoot.querySelector('.jg-bg-emerald-200, .jg-bg-red-500');
         if (answeredButton) {
@@ -213,7 +228,7 @@ const PanelContent = ({ onQuestionAnswered }) => {
       <h2 className="text-4xl font-bold mb-4 text-center">Your First Practice Question</h2>
       <h3 className="text-xl font-semibold mb-4 text-indigo-500">What Does Jargon Do?</h3>
       <span className="mb-4">
-        Jargon uses the content you're already consuming, from Product Hunt
+        Jargon uses the content you&apos;re already consuming, from Product Hunt
         comments to news articles to social media, to teach you new vocabulary
         and phrases relevant to your life.
       </span>
@@ -230,8 +245,8 @@ const PanelContent = ({ onQuestionAnswered }) => {
           cursor: 'pointer'
         }}>No need to carve out extra time for lessons.</span> Jargon brings language
         practice to you. When Jargon is on, it highlights sentences at your
-        language level and generates a question in the language you're trying to
-        learn. Simply click on highlights while you're reading to get practice.
+        language level and generates a question in the language you&apos;re trying to
+        learn. Simply click on highlights while you&apos;re reading to get practice.
       </span>
       <div style={{
         height: "40px"
@@ -296,12 +311,12 @@ export default function Tutorial() {
             onClick={handleSignIn}
           >
             <button className="whitespace-nowrap text-nowrap text-[14px] font-medium text-white sm:text-[22px]">
-              I'm signed in!
+              I&apos;m signed in!
             </button>
           </div>
         </>
       ) : showNextPage ? (
-        <TutorialNextPage onNextClick={() => console.log("Next tutorial step")} />
+        <TutorialNextPage />
       ) : (
         <div className="p-8 rounded-lg max-w-2xl mx-auto">
           <PanelContent onQuestionAnswered={handleNextClick} />
