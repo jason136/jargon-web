@@ -217,6 +217,9 @@ const PanelContent = ({ onQuestionAnswered }) => {
         comments to news articles to social media, to teach you new vocabulary
         and phrases relevant to your life.
       </span>
+      <div style={{
+        height: "30px"
+      }}></div>
       <h3 className="text-xl font-semibold mb-4 text-indigo-500">How to Use Jargon?</h3>
       <span className="mb-4">
         <span className="highlighted-span" id="test-999999999999" style={{
