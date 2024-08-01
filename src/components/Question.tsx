@@ -34,13 +34,6 @@ export default function Question({
               style={{ width: `${progress}%` }}
             />
           </div>
-          <Image
-            className="pl-1"
-            src="/target.svg"
-            alt="Target"
-            height={22}
-            width={22}
-          />
         </div>
 
         <div className="font-quicksand w-full pb-1 pt-5 text-[13px] font-semibold text-black">
@@ -76,22 +69,19 @@ export default function Question({
               width={17}
             />
           </button>
+          <div className="flex-grow" />
           <button>
-            <Image src="/target.svg" alt="Target Icon" height={24} width={24} />
+            <Image
+              src="/pause.svg"
+              alt="Pause Icon"
+              height={24}
+              width={24}
+            />
           </button>
           <button>
             <Image
               src="/report_problem.svg"
               alt="Report Icon"
-              height={24}
-              width={24}
-            />
-          </button>
-          <div className="flex-grow" />
-          <button>
-            <Image
-              src="/level_up.svg"
-              alt="Level Up Icon"
               height={24}
               width={24}
             />
