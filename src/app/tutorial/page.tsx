@@ -228,7 +228,7 @@ const PanelContent = ({ onQuestionAnswered }) => {
           textDecorationStyle: 'solid',
           textDecorationThickness: '2.5px',
           cursor: 'pointer'
-        }}>No need to carve out extra time for lessons. </span>Jargon brings language
+        }}>No need to carve out extra time for lessons.</span> Jargon brings language
         practice to you. When Jargon is on, it highlights sentences at your
         language level and generates a question in the language you're trying to
         learn. Simply click on highlights while you're reading to get practice.
