@@ -51,13 +51,13 @@ export default function HomePage() {
 
 
       <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4">
-        <h2 className="bg-violet-300 text-left text-[18px] font-bold text-zinc-500 sm:text-4xl">
+        <h2 className="text-left text-[18px] font-bold text-zinc-500 sm:text-4xl underline decoration-[#7E8EF8] decoration-4">
           Why is language learning so hard?
         </h2>
 
         <p className="text-left text-[16px] leading-6 text-zinc-500 sm:text-[26px] sm:leading-8">
           Online language learning is widely accessible, yet many apps offer
-          irrelevant content that requires A LOT OF willpower to actually
+          irrelevant content that requires A LOT of willpower to actually
           practice until fluency
         </p>
       </div>
@@ -86,8 +86,8 @@ export default function HomePage() {
             Contextual Learning
           </h3>
           <p className="text-[14px] font-medium leading-6 text-zinc-500 sm:text-2xl sm:leading-8">
-            Learning to say “I am hungry” is fun, but learning to say phrases in
-            real context and jargons in your interest are more practical.
+            Learning to say basic phrases can be fun, but learning to say phrases in
+            the context of your life and interests is more practical!
           </p>
         </div>
         <div></div>
@@ -109,9 +109,9 @@ export default function HomePage() {
 
         <p className="max-w-[1100px] text-center text-[15px] font-medium leading-6 text-zinc-500 sm:text-[26px] sm:leading-9">
           Jargon integrates learning into your browsing experience: whether you
-          are checking emails, reading the news, doing work or even scrolling
-          through Reddit threads, you can learn new vocabularies and phrases
-          more effortlessly!
+          are checking emails, reading the news, doing work or scrolling
+          through Reddit, you can learn new vocabulary and phrases
+          effortlessly!
         </p>
       </div>
 
