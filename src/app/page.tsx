@@ -21,35 +21,36 @@ export default function HomePage() {
       />
 
       <Link
-        className="mt-10 h-[64px] w-[218px] sm:mt-12 sm:h-[84.53px] sm:w-[290px]"
+        className="mt-10 h-[63px] w-[218px] sm:mt-12 sm:h-[84.53px] sm:w-[290px]"
         href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj"
         target="_blank"
       >
         <Image src="/jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
       </Link>
       <Image
+        className="h-auto w-[320px] sm:w-[435px]"
         src="/jar_only.svg"
         alt="Half Jar Icon"
         height={300}
         width={435}
       />
+      <div className="mt-[120px] sm:mt-[10px]">
+        <Sliding
+          contents={[
+            "Spanish 🇪🇸",
+            "Italian 🇮🇹",
+            "French 🇫🇷",
+            "German 🇩🇪",
+            "Portuguese 🇵🇹",
+            "Mandarin 🇨🇳",
+            "Japanese 🇯🇵",
+            "Korean 🇰🇷",
+            "Hindi 🇮🇳",
+          ]}
+        />
+      </div>
 
-      <Sliding
-        contents={[
-          "Spanish 🇪🇸",
-          "Italian 🇮🇹",
-          "French 🇫🇷",
-          "German 🇩🇪",
-          "Portuguese 🇵🇹",
-          "Mandarin 🇨🇳",
-          "Japanese 🇯🇵",
-          "Korean 🇰🇷",
-          "Hindi 🇮🇳",
-        ]}
-      />
-
-
-      <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4">
+      <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4 mt-[-300px] sm:mt-[-200px]" >
         <h2 className="text-left text-[18px] font-bold text-zinc-500 sm:text-4xl underline decoration-[#7E8EF8] decoration-4">
           Why is language learning so hard?
         </h2>
