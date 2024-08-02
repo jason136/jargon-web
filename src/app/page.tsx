@@ -35,7 +35,6 @@ export default function HomePage() {
       />
 
       <Sliding
-        className="relative -mt-24 -top-1"
         contents={[
           "Spanish 🇪🇸",
           "Italian 🇮🇹",
