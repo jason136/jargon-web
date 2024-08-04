@@ -134,6 +134,11 @@ const TutorialNextPage = () => {
       position: "right-full mr-[-10px] top-0"
     },
     {
+      text: "If a question generates incorrectly, you can regenerate it by clicking on the highlight again.",
+      buttonText: "Sounds good",
+      position: "right-full mr-[-10px] top-0"
+    },
+    {
       text: "The correct answer is saved to your jar after answering the question",
       buttonText: "Sounds good",
       position: "left-full ml-4 top-40 "
