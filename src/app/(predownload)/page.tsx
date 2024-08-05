@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import Sliding from "../components/Sliding";
-import Question from "../components/Question";
-import Review from "../components/Review";
-import Typing from "../components/Typing";
+import Sliding from "../../components/Sliding";
+import Question from "../../components/Question";
+import Review from "../../components/Review";
+import Typing from "../../components/Typing";
 
 export default function HomePage() {
   return (
@@ -37,15 +37,29 @@ export default function HomePage() {
       <div className="mt-[120px] sm:mt-[10px]">
         <Sliding
           contents={[
-            "Spanish 🇪🇸",
-            "Italian 🇮🇹",
-            "French 🇫🇷",
-            "German 🇩🇪",
-            "Portuguese 🇵🇹",
-            "Mandarin 🇨🇳",
-            "Japanese 🇯🇵",
+            "Tamil 🇮🇳",
+            "Romanian 🇷🇴",
+            "Croatian 🇭🇷",
+            "Tagalog 🇵🇭",
             "Korean 🇰🇷",
+            "Greek 🇬🇷",
+            "Portuguese 🇵🇹",
+            "Vietnamese 🇻🇳",
+            "Spanish 🇪🇸",
+            "Japanese 🇯🇵",
+            "German 🇩🇪",
+            "Mandarin Chinese 🇨🇳",
+            "French 🇫🇷",
+            "Sinhala 🇱🇰",
+            "Bengali 🇧🇩",
+            "Turkish 🇹🇷",
+            "Marathi 🇮🇳",
+            "Telugu 🇮🇳",
+            "Italian 🇮🇹",
+            "Urdu 🇵🇰",
             "Hindi 🇮🇳",
+            "Russian 🇷🇺",
+            "Arabic 🇸🇦"
           ]}
         />
       </div>

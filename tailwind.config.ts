@@ -9,7 +9,7 @@ const config: Config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       animation: {
-        slide: "slide 14s linear infinite",
+        slide: "slide 25s linear infinite",
       },
       keyframes: {
         slide: {

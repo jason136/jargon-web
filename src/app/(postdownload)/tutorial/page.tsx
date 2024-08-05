@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Question from "../../components/Question";
+import Question from "../../../components/Question";
 
 interface FlexiblePopupProps {
   text: string;
