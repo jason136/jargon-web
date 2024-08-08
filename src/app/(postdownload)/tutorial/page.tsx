@@ -77,7 +77,7 @@ const FinalPopup = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <Link href="https://en.wikipedia.org/wiki/Jargon" target="_blank" rel="noopener noreferrer">
+          <Link href="https://en.wikipedia.org/wiki/Jargon">
             <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
               Let&apos;s go
             </button>
