@@ -12,6 +12,9 @@ interface FlexiblePopupProps {
   onButtonClick: () => void;
   isVisible: boolean;
   position: string;
+  lineExists: boolean;
+  lineWidth: string;
+  leftMargin: number;
 }
 
 interface FinalFlexiblePopupProps {
@@ -21,15 +24,23 @@ interface FinalFlexiblePopupProps {
   position: string;
 }
 
-const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position }: FlexiblePopupProps) => {
+const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position, lineWidth = '110%', lineExists = true, leftMargin = 50 }: FlexiblePopupProps & { lineWidth?: string, lineExists?: boolean }) => {
   if (!isVisible) return null;
 
   return (
     <div className={`absolute ${position} rounded-lg p-4 w-64`}>
       <span className="text-gray-700 mb-4">{text}</span>
-      <div style={{
+      {!lineExists ? (<div style={{
         height: "10px"
-      }}></div>
+      }}></div>) : <div 
+      style={{
+        width: lineWidth,
+        height: '2px',
+        backgroundColor: 'gray',
+        margin: '10px 0',
+        marginLeft: `-${leftMargin}px`
+        }}
+      ></div>}
       <button 
         onClick={onButtonClick}
         className="bg-[#7F7FFF] text-white px-6 py-2 rounded-full hover:bg-[#6A6AE3] transition-colors"
@@ -126,32 +137,50 @@ const TutorialNextPage = () => {
     {
       text: "This is an example question generated from the text you're reading.",
       buttonText: "Okay",
-      position: "right-full mr-[-10px] top-0"
+      position: "right-full mr-[-10px] top-0",
+      lineExists: true,
+      lineWidth: "110%",
+      leftMargin: 0
     },
     {
       text: "Right now, questions are only generated from English text. Now try answering this question!",
       buttonText: "Got it",
-      position: "right-full mr-[-10px] top-0"
+      position: "right-full mr-[-10px] top-0",
+      lineExists: false,
+      lineWidth: "110%",
+      leftMargin: 0
     },
     {
       text: "If a question generates incorrectly, you can regenerate it by clicking on the highlight again.",
       buttonText: "Sounds good",
-      position: "right-full mr-[-10px] top-0"
+      position: "right-full mr-[-10px] top-0",
+      lineExists: false,
+      lineWidth: "110%",
+      leftMargin: 0
     },
     {
       text: "The correct answer is saved to your jar after answering the question",
       buttonText: "Sounds good",
-      position: "left-full ml-4 top-40 "
+      position: "left-full ml-4 top-[100px] ",
+      lineExists: true,
+      lineWidth: "120%",
+      leftMargin: 50
     },
     {
       text: "The pause button on the left allows you to stop the extension temporarily",
       buttonText: "Sounds good",
-      position: "left-full ml-4 mt-[-80px]"
+      position: "left-full ml-4 mt-[-125px]",
+      lineExists: true,
+      lineWidth: "110%",
+      leftMargin: 85
     },
     {
       text: "You can report any issues to us by clicking the button on the right",
       buttonText: "Great!",
-      position: "left-full ml-4 mt-[-80px]"
+      position: "left-full ml-4 mt-[-125px]",
+      lineExists: true,
+      lineWidth: "110%",
+      leftMargin: 50
     },
   ];
 
@@ -159,7 +188,8 @@ const TutorialNextPage = () => {
     if (currentPopup < popups.length - 1) {
       setCurrentPopup(currentPopup + 1);
     } else {  
-      setShowFinalFlexiblePopup(true); // Reset to first popup or handle completion
+      setShowFinalFlexiblePopup(true);
+       // Reset to first popup or handle completion
     }
   };
 
@@ -185,7 +215,10 @@ const TutorialNextPage = () => {
             buttonText={popups[currentPopup]?.buttonText ?? ''}
             onButtonClick={handlePopupButtonClick}
             isVisible={true}
+            lineExists={popups[currentPopup]?.lineExists ?? true}
+            lineWidth={popups[currentPopup]?.lineWidth ?? '110%'}
             position={popups[currentPopup]?.position ?? ''}
+            leftMargin={popups[currentPopup]?.leftMargin ?? 50}
           />
         )}
 
@@ -198,6 +231,19 @@ const TutorialNextPage = () => {
           />
         )}
       </div>
+
+      {showFinalFlexiblePopup && (
+        <div className="fixed top-4 right-[100px] z-50">
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 bg-blue-500 rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showFinalPopup && <FinalPopup />}
     </div>
