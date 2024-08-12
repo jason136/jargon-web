@@ -214,13 +214,20 @@ const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }
         // Look for a button with green or red color, indicating an answer was selected
         const answeredButton = shadowHost.shadowRoot.querySelector('.jg-bg-emerald-200, .jg-bg-red-500');
         if (answeredButton) {
-          setIsQuestionAnswered(true);
+          // Remove the shadowHost element after 2 seconds
+          setTimeout(() => {
+            const shadowHostElement = document.getElementById('shadowHost');
+            if (shadowHostElement) {
+              shadowHostElement.remove();
+            }
+            setIsQuestionAnswered(true);
+          }, 1000);
         }
       }
     };
 
     // Set up an interval to check periodically
-    const intervalId = setInterval(checkForAnsweredQuestion, 1000); // Check every second
+    const intervalId = setInterval(checkForAnsweredQuestion, 500); // Check every second
 
     return () => {
       // Clean up the interval when the component unmounts
@@ -263,14 +270,14 @@ const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }
         </span>
       </div>
       {isQuestionAnswered ?  (
-        <div className="mt-6 text-center">
-          <button
-            onClick={onQuestionAnswered}
-            className="bg-indigo-600 text-white px-6 py-2 mr-[-200px] rounded-full hover:bg-indigo-700 transition-colors"
-          >
-            Next
-          </button>
-        </div>
+        <div 
+        className="flex flex-row items-center mt-[30px] justify-center gap-1 rounded-[40px] bg-violet-700 px-6 py-2 sm:gap-2 sm:px-12 sm:py-4 cursor-pointer"
+        onClick={onQuestionAnswered}
+      >
+        <button className="whitespace-nowrap text-nowrap text-[14px] font-medium text-white sm:text-[22px]">
+          Next
+        </button>
+      </div>
       ):(
         <div className="mt-6 text-center" style={{
           height: "40px"
