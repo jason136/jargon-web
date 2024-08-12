@@ -12,6 +12,9 @@ interface FlexiblePopupProps {
   onButtonClick: () => void;
   isVisible: boolean;
   position: string;
+  lineExists: boolean;
+  lineWidth: string;
+  leftMargin: number;
 }
 
 interface FinalFlexiblePopupProps {
@@ -21,15 +24,30 @@ interface FinalFlexiblePopupProps {
   position: string;
 }
 
-const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position }: FlexiblePopupProps) => {
+interface FinalFinalPopupProps {
+  showEndPage: boolean;
+  onButtonClick: () => void;
+}
+
+
+
+const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position, lineWidth = '110%', lineExists = true, leftMargin = 50 }: FlexiblePopupProps & { lineWidth?: string, lineExists?: boolean }) => {
   if (!isVisible) return null;
 
   return (
     <div className={`absolute ${position} rounded-lg p-4 w-64`}>
       <span className="text-gray-700 mb-4">{text}</span>
-      <div style={{
+      {!lineExists ? (<div style={{
         height: "10px"
-      }}></div>
+      }}></div>) : <div 
+      style={{
+        width: lineWidth,
+        height: '2px',
+        backgroundColor: 'gray',
+        margin: '10px 0',
+        marginLeft: `-${leftMargin}px`
+        }}
+      ></div>}
       <button 
         onClick={onButtonClick}
         className="bg-[#7F7FFF] text-white px-6 py-2 rounded-full hover:bg-[#6A6AE3] transition-colors"
@@ -61,7 +79,7 @@ const FinalPopup = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
       <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-lg">
-        <h3 className="text-2xl font-bold mb-6 text-center">End of Tutorial: Start learning!</h3>
+        <h3 className="text-2xl font-bold mb-6 text-center">Welcome to your Jar!</h3>
         <div className="bg-[#F8F7FF] p-4 rounded-lg mb-6">
           <div className="flex items-start mb-4">
             <Image src="/favicon.ico" alt="Jar Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
@@ -71,22 +89,92 @@ const FinalPopup = () => {
           </div>
           <div className="flex items-start">
             <Image src="/setting.svg" alt="Settings Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
-            <span className="text-sm text-gray-700">
-              If you want to change learning preferences, simply click on the &quot;settings&quot; button on the top right
+            <span className="text-sm font-bold text-gray-700">
+              Now, click on the &quot;settings&quot; button on the top right to change your learning preferences!
             </span>
           </div>
         </div>
-        <div className="flex justify-center">
+
+        {/* <div className="flex justify-center">
           <Link href="https://en.wikipedia.org/wiki/Jargon">
             <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
               Let&apos;s go
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
+
+const FinalFinalPopup = ({ showEndPage, onButtonClick }: FinalFinalPopupProps) => {
+  return (
+    
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
+      <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-lg">
+        {!showEndPage ? (
+          <>
+          <h3 className="text-2xl font-bold mb-6 text-center">Settings</h3>
+            <div className="bg-[#F8F7FF] p-4 rounded-lg mb-6">
+              <div className="flex items-start mb-4">
+                <Image src="/setting.svg" alt="Settings Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+                <span className="text-sm text-gray-700">
+                You can change language, difficulty, practice and question settings as well as modify the permissions for Jargon to generate questions on certain sites. 
+                </span>
+              </div>
+              <div className="flex items-start">
+                <Image src="/report_problem.svg" alt="Problem Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+                <span className="text-sm text-gray-700">
+                  If you run into any additional problems, you can also send us a report by pressing the error icon.
+                </span>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <button 
+                onClick={onButtonClick} 
+                className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold"
+              >
+                Got it
+              </button>
+            </div>
+          </>
+        ): (
+          <>
+          <h3 className="text-2xl font-bold mb-6 text-center">End of Tutorial!</h3>
+            <div className="bg-[#F8F7FF] p-4 rounded-lg mb-6">
+              <div className="flex items-start mb-4">
+                <Image src="/favicon.ico" alt="Jar Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+            <span className="text-sm text-gray-700">
+              Enjoy language learning with Jargon! If you run into a question you think is fun, don&apos;t be shy about sharing it in our{" "}
+              <Link href="https://discord.com/invite/aSeHJw3Db4" target="_blank" className="inline-flex items-center cursor:pointer mt-1">
+                <span className="text-indigo-400 font-medium">discord community! </span>
+                <Image src="/discord-icon.svg" alt="Discord Logo" width={16} height={16} className="ml-1" />
+              </Link>
+            </span>
+          </div>
+          <div className="flex items-start mb-4">
+            <Image src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="Chrome Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+            <span className="text-sm text-gray-700">
+            If you like Jargon or have any feedback, leave us a review on the Chrome Web Store!
+            </span>
+          </div>
+        </div>
+
+        <div className="flex justify-center">
+          <Link href="https://en.wikipedia.org/wiki/Jargon">
+            <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
+                  Let&apos;s go
+                </button>
+            </Link>
+          </div>
+        </>
+        )}
+      </div>
+    </div>  
+  );
+};
+
 
 
 
@@ -94,9 +182,12 @@ const TutorialNextPage = () => {
   const [currentPopup, setCurrentPopup] = useState(0);
   const [showFinalFlexiblePopup, setShowFinalFlexiblePopup] = useState(false);
   const [showFinalPopup, setShowFinalPopup] = useState(false);
+  const [showFinalFinalPopup, setShowFinalFinalPopup] = useState(false);
+  const [showEndPage, setShowEndPage] = useState(false);
 
   useEffect(() => {
-    if (!showFinalFlexiblePopup) return; // Only run this effect after FinalFlexiblePopup is shown
+    if (!showFinalFlexiblePopup) return;
+    if(showFinalFinalPopup) return; // Only run this effect after FinalFlexiblePopup is shown
 
     const checkForPanelOpen = () => {
       const allElements = document.getElementsByTagName('*');
@@ -118,7 +209,32 @@ const TutorialNextPage = () => {
   
     return () => clearInterval(intervalId); // Clean up the interval when the component unmounts
   }, [showFinalFlexiblePopup]);
+
+  useEffect(() => {
+    if (!showFinalPopup) return;
+    if (showFinalFinalPopup) return; // Only run this effect after FinalFlexiblePopup is shown
+
+    const checkForSettingsOpen = () => {
+      const allElements = document.getElementsByTagName('*');
+      for (const element of allElements) {
+        if (element.shadowRoot) {
+          const blurElement = element.shadowRoot?.querySelector('.jg-blur-sm');
+          if (blurElement) {
+            setShowFinalPopup(false);
+            setShowFinalFinalPopup(true);
+            return;
+          }
+        }
+      }
+    };
   
+    const intervalId = setInterval(checkForSettingsOpen, 1000); // Check every second
+  
+    // Initial check
+    checkForSettingsOpen();
+  
+    return () => clearInterval(intervalId); // Clean up the interval when the component unmounts
+  }, [showFinalPopup]);
   
 
 
@@ -126,32 +242,50 @@ const TutorialNextPage = () => {
     {
       text: "This is an example question generated from the text you're reading.",
       buttonText: "Okay",
-      position: "right-full mr-[-10px] top-0"
+      position: "right-full mr-[-10px] top-0",
+      lineExists: true,
+      lineWidth: "110%",
+      leftMargin: 0
     },
     {
       text: "Right now, questions are only generated from English text. Now try answering this question!",
       buttonText: "Got it",
-      position: "right-full mr-[-10px] top-0"
+      position: "right-full mr-[-10px] top-0",
+      lineExists: false,
+      lineWidth: "110%",
+      leftMargin: 0
     },
     {
       text: "If a question generates incorrectly, you can regenerate it by clicking on the highlight again.",
       buttonText: "Sounds good",
-      position: "right-full mr-[-10px] top-0"
+      position: "right-full mr-[-10px] top-0",
+      lineExists: false,
+      lineWidth: "110%",
+      leftMargin: 0
     },
     {
       text: "The correct answer is saved to your jar after answering the question",
       buttonText: "Sounds good",
-      position: "left-full ml-4 top-40 "
+      position: "left-full ml-4 top-[100px] ",
+      lineExists: true,
+      lineWidth: "120%",
+      leftMargin: 50
     },
     {
       text: "The pause button on the left allows you to stop the extension temporarily",
       buttonText: "Sounds good",
-      position: "left-full ml-4 mt-[-80px]"
+      position: "left-full ml-4 mt-[-125px]",
+      lineExists: true,
+      lineWidth: "110%",
+      leftMargin: 85
     },
     {
       text: "You can report any issues to us by clicking the button on the right",
       buttonText: "Great!",
-      position: "left-full ml-4 mt-[-80px]"
+      position: "left-full ml-4 mt-[-125px]",
+      lineExists: true,
+      lineWidth: "110%",
+      leftMargin: 50
     },
   ];
 
@@ -159,9 +293,14 @@ const TutorialNextPage = () => {
     if (currentPopup < popups.length - 1) {
       setCurrentPopup(currentPopup + 1);
     } else {  
-      setShowFinalFlexiblePopup(true); // Reset to first popup or handle completion
+      setShowFinalFlexiblePopup(true);
+       // Reset to first popup or handle completion
     }
   };
+
+  const handleFinalFinalPopupClick = () => {
+   setShowEndPage(true);
+  }
 
   return (
     <div className="flex flex-col items-center justify-center h-full p-4 relative">
@@ -185,7 +324,10 @@ const TutorialNextPage = () => {
             buttonText={popups[currentPopup]?.buttonText ?? ''}
             onButtonClick={handlePopupButtonClick}
             isVisible={true}
+            lineExists={popups[currentPopup]?.lineExists ?? true}
+            lineWidth={popups[currentPopup]?.lineWidth ?? '110%'}
             position={popups[currentPopup]?.position ?? ''}
+            leftMargin={popups[currentPopup]?.leftMargin ?? 50}
           />
         )}
 
@@ -199,7 +341,21 @@ const TutorialNextPage = () => {
         )}
       </div>
 
-      {showFinalPopup && <FinalPopup />}
+      {showFinalFlexiblePopup && (
+        <div className="fixed top-4 right-[100px] z-50">
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 bg-blue-500 rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showFinalPopup && !showFinalFinalPopup && <FinalPopup />}
+      {showFinalFinalPopup && <FinalFinalPopup showEndPage={showEndPage} onButtonClick={handleFinalFinalPopupClick} />}
     </div>
   );
 };
