@@ -24,6 +24,13 @@ interface FinalFlexiblePopupProps {
   position: string;
 }
 
+interface FinalFinalPopupProps {
+  showEndPage: boolean;
+  onButtonClick: () => void;
+}
+
+
+
 const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position, lineWidth = '110%', lineExists = true, leftMargin = 50 }: FlexiblePopupProps & { lineWidth?: string, lineExists?: boolean }) => {
   if (!isVisible) return null;
 
@@ -100,15 +107,87 @@ const FinalPopup = () => {
   );
 };
 
+const FinalFinalPopup = ({ showEndPage, onButtonClick }: FinalFinalPopupProps) => {
+  return (
+    
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
+      <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-lg">
+        {!showEndPage ? (
+          <>
+          <h3 className="text-2xl font-bold mb-6 text-center">Settings</h3>
+            <div className="bg-[#F8F7FF] p-4 rounded-lg mb-6">
+              <div className="flex items-start mb-4">
+                <Image src="/setting.svg" alt="Settings Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+                <span className="text-sm text-gray-700">
+                You can change language, difficulty, practice and question settings as well as modify the permissions for Jargon to generate questions on certain sites. 
+                </span>
+              </div>
+              <div className="flex items-start">
+                <Image src="/report_problem.svg" alt="Problem Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+                <span className="text-sm text-gray-700">
+                  If you run into any additional problems, you can also send us a report by pressing the error icon.
+                </span>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <button 
+                onClick={onButtonClick} 
+                className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold"
+              >
+                Got it
+              </button>
+            </div>
+          </>
+        ): (
+          <>
+          <h3 className="text-2xl font-bold mb-6 text-center">End of Tutorial!</h3>
+            <div className="bg-[#F8F7FF] p-4 rounded-lg mb-6">
+              <div className="flex items-start mb-4">
+                <Image src="/favicon.ico" alt="Jar Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+            <span className="text-sm text-gray-700">
+              Enjoy language learning with Jargon! If you run into a question you think is fun, don&apos;t be shy about sharing it in our{" "}
+              <Link href="https://discord.com/invite/aSeHJw3Db4" target="_blank" className="inline-flex items-center cursor:pointer mt-1">
+                <span className="text-indigo-400 font-medium">discord community! </span>
+                <Image src="/discord-icon.svg" alt="Discord Logo" width={16} height={16} className="ml-1" />
+              </Link>
+            </span>
+          </div>
+          <div className="flex items-start mb-4">
+            <Image src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="Chrome Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
+            <span className="text-sm text-gray-700">
+            If you like Jargon or have any feedback, leave us a review on the Chrome Web Store!
+            </span>
+          </div>
+        </div>
+
+        <div className="flex justify-center">
+          <Link href="https://en.wikipedia.org/wiki/Jargon">
+            <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
+                  Let&apos;s go
+                </button>
+            </Link>
+          </div>
+        </>
+        )}
+      </div>
+    </div>  
+  );
+};
+
+
 
 
 const TutorialNextPage = () => {    
   const [currentPopup, setCurrentPopup] = useState(0);
   const [showFinalFlexiblePopup, setShowFinalFlexiblePopup] = useState(false);
   const [showFinalPopup, setShowFinalPopup] = useState(false);
+  const [showFinalFinalPopup, setShowFinalFinalPopup] = useState(false);
+  const [showEndPage, setShowEndPage] = useState(false);
 
   useEffect(() => {
-    if (!showFinalFlexiblePopup) return; // Only run this effect after FinalFlexiblePopup is shown
+    if (!showFinalFlexiblePopup) return;
+    if(showFinalFinalPopup) return; // Only run this effect after FinalFlexiblePopup is shown
 
     const checkForPanelOpen = () => {
       const allElements = document.getElementsByTagName('*');
@@ -130,7 +209,32 @@ const TutorialNextPage = () => {
   
     return () => clearInterval(intervalId); // Clean up the interval when the component unmounts
   }, [showFinalFlexiblePopup]);
+
+  useEffect(() => {
+    if (!showFinalPopup) return;
+    if (showFinalFinalPopup) return; // Only run this effect after FinalFlexiblePopup is shown
+
+    const checkForSettingsOpen = () => {
+      const allElements = document.getElementsByTagName('*');
+      for (const element of allElements) {
+        if (element.shadowRoot) {
+          const blurElement = element.shadowRoot?.querySelector('.jg-blur-sm');
+          if (blurElement) {
+            setShowFinalPopup(false);
+            setShowFinalFinalPopup(true);
+            return;
+          }
+        }
+      }
+    };
   
+    const intervalId = setInterval(checkForSettingsOpen, 1000); // Check every second
+  
+    // Initial check
+    checkForSettingsOpen();
+  
+    return () => clearInterval(intervalId); // Clean up the interval when the component unmounts
+  }, [showFinalPopup]);
   
 
 
@@ -194,6 +298,10 @@ const TutorialNextPage = () => {
     }
   };
 
+  const handleFinalFinalPopupClick = () => {
+   setShowEndPage(true);
+  }
+
   return (
     <div className="flex flex-col items-center justify-center h-full p-4 relative">
       <h2 className="text-3xl font-bold mb-6">Getting to Know Jargon</h2>
@@ -246,7 +354,8 @@ const TutorialNextPage = () => {
         </div>
       )}
 
-      {showFinalPopup && <FinalPopup />}
+      {showFinalPopup && !showFinalFinalPopup && <FinalPopup />}
+      {showFinalFinalPopup && <FinalFinalPopup showEndPage={showEndPage} onButtonClick={handleFinalFinalPopupClick} />}
     </div>
   );
 };
