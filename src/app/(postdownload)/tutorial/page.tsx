@@ -72,7 +72,7 @@ const FinalPopup = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
       <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-lg">
-        <h3 className="text-2xl font-bold mb-6 text-center">End of Tutorial: Start learning!</h3>
+        <h3 className="text-2xl font-bold mb-6 text-center">Welcome to your Jar!</h3>
         <div className="bg-[#F8F7FF] p-4 rounded-lg mb-6">
           <div className="flex items-start mb-4">
             <Image src="/favicon.ico" alt="Jar Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
@@ -82,18 +82,19 @@ const FinalPopup = () => {
           </div>
           <div className="flex items-start">
             <Image src="/setting.svg" alt="Settings Icon" width={24} height={24} className="mr-3 flex-shrink-0 mt-1" />
-            <span className="text-sm text-gray-700">
-              If you want to change learning preferences, simply click on the &quot;settings&quot; button on the top right
+            <span className="text-sm font-bold text-gray-700">
+              Now, click on the &quot;settings&quot; button on the top right to change your learning preferences!
             </span>
           </div>
         </div>
-        <div className="flex justify-center">
+
+        {/* <div className="flex justify-center">
           <Link href="https://en.wikipedia.org/wiki/Jargon">
             <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
               Let&apos;s go
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
