@@ -470,9 +470,24 @@ export default function Tutorial() {
             </span>
           </div>
           <div>
-            <video preload="auto" autoPlay muted loop id="myVideo" width="500" height="300">
-              <source src="/onboarded.mp4" type="video/mp4" />
-            </video>
+            <div style={{ overflow: 'hidden', height: 'calc(100% - 60px)' }}>
+              <video 
+                preload="auto" 
+                autoPlay 
+                muted 
+                loop 
+                id="myVideo"  
+                width="470" 
+                style={{ 
+                  marginTop: '-50px', 
+                  marginBottom: '-50px',
+                  height: 'calc(100% + 60px)',
+                  objectFit: 'cover'
+                }}
+              >
+                <source src="/onboarded.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
           <div 
             className="flex flex-row items-center justify-center gap-1 rounded-[40px] bg-violet-700 px-6 py-2 sm:gap-2 sm:px-12 sm:py-4 cursor-pointer"
