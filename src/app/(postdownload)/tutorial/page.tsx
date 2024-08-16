@@ -422,7 +422,7 @@ const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }
       <div className="bg-[#EEF6FE] p-4 rounded-lg shadow-sm flex items-center">
         <Image src="/favicon.ico" alt="Favicon" width={32} height={32} className="mr-2" />
         <span className="text-sm">
-          Click on the highlight in the text above to try your first question!
+          Click on the highlight in the text above to try your first question! If the question doesn&apos;t pop-up, you might need to login again.
         </span>
       </div>
       {isQuestionAnswered ?  (
@@ -503,6 +503,19 @@ export default function Tutorial() {
       ) : (
         <div className="p-8 rounded-lg max-w-2xl mx-auto">
           <PanelContent onQuestionAnswered={handleNextClick} />
+        </div>
+      )}
+
+      {!showPanel && (
+        <div className="fixed top-4 right-[115px] z-50">
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 bg-blue-500 rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -1,11 +1,15 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Sliding from "../../components/Sliding";
 import Question from "../../components/Question";
 import Review from "../../components/Review";
 import Typing from "../../components/Typing";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [showQuestion, setShowQuestion] = useState(false);
+
   return (
     <div className="flex flex-col items-center justify-normal">
       <h3 className="sm-1 pt-12 text-center text-[16px] font-bold text-zinc-500 sm:p-4 sm:pt-32 sm:text-3xl">
@@ -25,7 +29,7 @@ export default function HomePage() {
         href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj"
         target="_blank"
       >
-        <Image src="/jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
+        <Image src="/new_jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
       </Link>
       <Image
         className="h-auto w-[320px] sm:w-[435px]"
@@ -65,35 +69,46 @@ export default function HomePage() {
       </div>
 
       <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4 mt-[-300px] sm:mt-[-200px]" >
-        <h2 className="text-left text-[18px] font-bold text-zinc-500 sm:text-4xl underline decoration-[#7E8EF8] decoration-4">
-          Why is language learning so hard?
+        <h2 
+          className="text-left text-[18px] font-bold text-zinc-500 sm:text-4xl underline decoration-[#7E8EF8] decoration-4 cursor-pointer hover:text-zinc-700 transition-colors"
+          onClick={() => setShowQuestion(true)}
+        >
+          Language mastery is just a click away!
         </h2>
 
-        <p className="text-left text-[16px] leading-6 text-zinc-500 sm:text-[26px] sm:leading-8">
-          Online language learning is widely accessible, yet many apps offer
-          irrelevant content that requires A LOT of willpower to actually
-          practice until fluency
+        <p className="text-left text-[16px] font-medium leading-6 text-zinc-500 sm:text-[26px] sm:leading-8">
+          Jargon augments your web browsing with fun language learning questions that you can answer to practice your language skills, just like the sentence above!
         </p>
       </div>
 
       <div className="flex w-screen flex-col items-center justify-between py-8 sm:flex-row sm:py-16">
         <div></div>
-        <div className="flex h-full  max-w-96 flex-grow flex-col justify-end px-8 pb-12 pt-4 text-center sm:px-0 sm:pb-0 sm:pt-40 sm:text-right">
+        <div className="flex h-full max-w-[400px] flex-grow flex-col justify-end px-8 pb-12 pt-4 text-right sm:px-0 sm:pb-0 sm:pt-40">
           <h3 className="text-[17px] font-bold leading-[30px] text-violet-700 sm:text-3xl sm:leading-[42px]">
             Consistent Practice
           </h3>
           <p className="text-[14px] font-medium leading-6 text-zinc-500 sm:text-2xl sm:leading-8">
-            Doing vocabulary practice is easy, but practicing 30 minutes
-            everyday is hard.
+            Answering bite-sized questions is fun and easy! Each question helps pave the way to language mastery    
           </p>
         </div>
         <div className="rotate-[-5.92deg]">
-          <Question
-            progress={50}
-            sentence="¿Por qué es ____ difícil aprender un idioma?"
-            options={["muy", "tan", "esto", "demasido"]}
-            correct="tan"
-          />
+          {!showQuestion ? (
+            <div className="flex items-center justify-center h-[200px] w-[180px] sm:h-[300px] sm:w-[200px]">
+              <div className="inline-block text-center animate-bounce bg-blue-200 rounded-lg p-2 sm:p-4 shadow-md">
+                <p className="text-blue-800 font-semibold text-sm sm:text-base">Click on the underlined text to try Jargon!</p>
+                <svg className="w-4 h-4 sm:w-6 sm:h-6 mx-auto mt-1 sm:mt-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+              </div>
+            </div>
+          ) : (
+            <Question
+              progress={50}
+              sentence="¡El dominio del ______ está a un solo clic!"
+              options={["jerga", "idioma", "dialecto", "vernáculo"]}
+              correct="idioma"
+            />
+          )}
         </div>
         <div className="flex h-full max-w-96 flex-col justify-start px-8 pt-12 text-center sm:px-0 sm:pb-40 sm:pt-0 sm:text-left">
           <h3 className="text-[17px] font-bold leading-[30px] text-violet-700 sm:text-3xl sm:leading-[42px]">
@@ -154,7 +169,7 @@ export default function HomePage() {
             name: "Stephen",
             lang: "🇨🇳 Chinese Learner",
             review:
-              "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I&apos;m learning.",
+              'Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I am learning.',
             tilt: "rotate-[-4.85deg]",
             offset:
               "translate-x-[-30px] sm:translate-x-0 sm:translate-y-[-30px]",
