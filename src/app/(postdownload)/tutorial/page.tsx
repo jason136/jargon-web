@@ -422,7 +422,7 @@ const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }
       <div className="bg-[#EEF6FE] p-4 rounded-lg shadow-sm flex items-center">
         <Image src="/favicon.ico" alt="Favicon" width={32} height={32} className="mr-2" />
         <span className="text-sm">
-          Click on the highlight in the text above to try your first question! If the question doesn't pop-up, you might need to login again.
+          Click on the highlight in the text above to try your first question! If the question doesn&apos;t pop-up, you might need to login again.
         </span>
       </div>
       {isQuestionAnswered ?  (
@@ -506,7 +506,8 @@ export default function Tutorial() {
         </div>
       )}
 
-      <div className="fixed top-4 right-[115px] z-50">
+      {!showPanel && (
+        <div className="fixed top-4 right-[115px] z-50">
           <div className="relative w-16 h-16">
             <div className="absolute inset-0 bg-blue-500 rounded-full animate-pulse"></div>
             <div className="absolute inset-0 flex items-center justify-center">
@@ -516,7 +517,7 @@ export default function Tutorial() {
             </div>
           </div>
         </div>
-
+      )}
     </div>
   );
 }

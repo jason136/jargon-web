@@ -49,15 +49,15 @@ export default function Toolbar({
         {children}
       </div>
 
-      <div className="flex w-screen flex-row justify-center bg-violet-200 px-20 py-8 sm:justify-between">
+      <div className="flex w-screen flex-col bg-violet-200 px-4 py-8 sm:flex-row sm:justify-between sm:px-20">
         <Image
-          className="hidden object-contain sm:block sm:h-[91px] sm:w-[262px]"
+          className="mx-auto mb-6 h-[60px] w-[172px] object-contain sm:mx-0 sm:mb-0 sm:h-[91px] sm:w-[262px]"
           src="/jargon.png"
           alt="Jargon Logo"
           width={262}
           height={91}
         />
-        <div className="flex flex-grow flex-col items-center gap-6 py-4">
+        <div className="flex flex-col items-center gap-6 py-4 sm:flex-grow">
           <div className="text-[16px] font-medium text-indigo-700">
             Community
           </div>
@@ -67,7 +67,7 @@ export default function Toolbar({
             </div>
           </Link>
         </div>
-        <div className="flex flex-grow flex-col items-center gap-6 py-4">
+        <div className="flex flex-col items-center gap-6 py-4 sm:flex-grow">
           <div className="text-[16px] font-medium text-indigo-700">Support</div>
           <Link href="mailto:support@jargonlearn.com" target="_blank">
             <div className="text-[14px] font-medium text-indigo-400">
@@ -115,6 +115,8 @@ export default function Toolbar({
                 height={56}
               />
             </Link>
+
+            
             <Link
               href="https://www.linkedin.com/in/jargon-learn/"
               target="_blank"
