@@ -17,10 +17,10 @@ export default function Onboarded() {
           muted
           loop
           id="myVideo"
-          width="470"
+          width="400"
           style={{
             marginTop: "-50px",
-            marginBottom: "-50px",
+            marginBottom: "-70px",
             height: "calc(100% + 60px)",
             objectFit: "cover",
           }}
@@ -29,7 +29,7 @@ export default function Onboarded() {
         </video>
       </div>
       <div className="w-1/3 min-w-80 space-y-3 pb-8 pt-6">
-        <div className="font-quicksand text-center font-medium text-neutral-700">
+        <div className="font-quicksand text-lg text-center font-medium text-neutral-700">
           Click on the extension icon to sign in and start your learning
           journey!
         </div>
