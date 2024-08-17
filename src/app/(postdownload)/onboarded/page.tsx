@@ -1,3 +1,4 @@
+import Image from 'next/image';
 export default function Onboarded() {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
@@ -24,7 +25,7 @@ export default function Onboarded() {
       </div>
       <div className="w-1/3 min-w-80 space-y-3 pb-8 pt-6">
         <div className="font-quicksand text-center font-medium text-lg text-neutral-700">
-          Open the extension to continue setting up!
+          Open the extension <Image src="/icon.png" alt="Extension Icon" width={16} height={16} className="inline-block mx-1" /> to continue setting up!
         </div>
       </div>
     </div>

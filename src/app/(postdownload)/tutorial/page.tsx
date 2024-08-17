@@ -19,7 +19,6 @@ interface FlexiblePopupProps {
 
 interface FinalFlexiblePopupProps {
   text: string;
-  buttonText: string;
   isVisible: boolean;
   position: string;
 }
@@ -58,16 +57,16 @@ const FlexiblePopup = ({ text, buttonText, onButtonClick, isVisible, position, l
   );
 };
 
-const FinalFlexiblePopup = ({ text, buttonText, isVisible, position }: FinalFlexiblePopupProps) => {
+const FinalFlexiblePopup = ({ text, isVisible, position }: FinalFlexiblePopupProps) => {
   if (!isVisible) return null;
 
   return (
     <div className={`absolute ${position} rounded-lg p-4 w-64 flex flex-col items-center`}>
       <span className="text-gray-700 mb-4 text-sm text-center">{text}</span>
       <div
-        className="text-center bg-[#EEF6FE] text-purple-600 px-8 py-1 rounded-full cursor-default transition-colors text-xs w-[120%] font-bold"
+        className="text-center bg-[#EEF6FE] text-violet-500 px-8 py-1 rounded-full cursor-default transition-colors text-xs w-[120%] font-bold"
       >
-        {buttonText}
+        Click on the extension icon <Image src="/icon.png" alt="Extension Icon" width={16} height={16} className="inline-block mx-1" /> at the top right of your page to open the jar!
       </div>
     </div>
   );
@@ -133,7 +132,7 @@ const FinalFinalPopup = ({ showEndPage, onButtonClick }: FinalFinalPopupProps) =
             <div className="flex justify-center">
               <button 
                 onClick={onButtonClick} 
-                className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold"
+                className="bg-violet-500 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold"
               >
                 Got it
               </button>
@@ -334,7 +333,6 @@ const TutorialNextPage = () => {
         {showFinalFlexiblePopup && (
           <FinalFlexiblePopup
             text="Finally, you can access your vocabulary jar by clicking here or directly on the extension icon"
-            buttonText="Click on the extension icon at the top right of your page to open the jar!"
             position="right-full mr-[15px] mt-[-125px] "
             isVisible={true}
           />
@@ -344,7 +342,7 @@ const TutorialNextPage = () => {
       {showFinalFlexiblePopup && (
         <div className="fixed top-4 right-[100px] z-50">
           <div className="relative w-16 h-16">
-            <div className="absolute inset-0 bg-blue-500 rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 bg-violet-500 rounded-full animate-pulse"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -426,14 +424,17 @@ const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }
         </span>
       </div>
       {isQuestionAnswered ?  (
-        <div 
-        className="flex flex-row items-center mt-[30px] justify-center gap-1 rounded-[40px] bg-violet-700 px-6 py-2 sm:gap-2 sm:px-12 sm:py-4 cursor-pointer"
-        onClick={onQuestionAnswered}
-      >
-        <button className="whitespace-nowrap text-nowrap text-[14px] font-medium text-white sm:text-[22px]">
-          Next
-        </button>
-      </div>
+        <div className="flex justify-center w-full">
+          <div 
+            className="flex flex-row items-center mt-[30px] justify-center gap-1 rounded-[40px] bg-violet-700 px-6 py-2 sm:gap-2 sm:px-12 sm:py-4 cursor-pointer"
+            onClick={onQuestionAnswered}
+            style={{ width: '200px' }}
+          >
+            <button className="whitespace-nowrap w-full text-nowrap text-[14px] font-medium text-white sm:text-[22px]">
+              Next
+            </button>
+          </div>
+        </div>
       ):(
         <div className="mt-6 text-center" style={{
           height: "40px"

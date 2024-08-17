@@ -94,7 +94,7 @@ export default function HomePage() {
         <div className="rotate-[-5.92deg]">
           {!showQuestion ? (
             <div className="flex items-center justify-center h-[200px] w-[180px] sm:h-[300px] sm:w-[200px]">
-              <div className="inline-block text-center animate-bounce bg-blue-200 rounded-lg p-2 sm:p-4 shadow-md">
+              <div className="inline-block text-center animate-bounce bg-violet-200 rounded-lg p-2 sm:p-4 shadow-md">
                 <p className="text-blue-800 font-semibold text-sm sm:text-base">Click on the underlined text to try Jargon!</p>
                 <svg className="w-4 h-4 sm:w-6 sm:h-6 mx-auto mt-1 sm:mt-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
