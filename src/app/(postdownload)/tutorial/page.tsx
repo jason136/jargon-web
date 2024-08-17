@@ -446,12 +446,8 @@ const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }
 };
 
 export default function Tutorial() {
-  const [showPanel, setShowPanel] = useState(false);
   const [showNextPage, setShowNextPage] = useState(false);
 
-  const handleSignIn = () => {
-    setShowPanel(true);
-  };
 
   const handleNextClick = () => {
     setShowNextPage(true);
@@ -459,63 +455,11 @@ export default function Tutorial() {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center pb-16 pt-10">
-      {!showPanel ? (
-        <>
-          <div className="mb-6 text-center">
-            <h1 className="font-quicksand text-3xl font-bold">
-              Welcome to Jargon!
-            </h1>
-            <span className="font-quicksand text-xl font-medium text-neutral-700">
-              Sign in by clicking on the extension icon 
-            </span>
-          </div>
-          <div>
-            <div style={{ overflow: 'hidden', height: 'calc(100% - 60px)' }}>
-              <video 
-                preload="auto" 
-                autoPlay 
-                muted 
-                loop 
-                id="myVideo"  
-                width="470" 
-                style={{ 
-                  marginTop: '-50px', 
-                  marginBottom: '-50px',
-                  height: 'calc(100% + 60px)',
-                  objectFit: 'cover'
-                }}
-              >
-                <source src="/onboarded.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-          <div 
-            className="flex flex-row items-center justify-center gap-1 rounded-[40px] bg-violet-700 px-6 py-2 sm:gap-2 sm:px-12 sm:py-4 cursor-pointer"
-            onClick={handleSignIn}
-          >
-            <button className="whitespace-nowrap text-nowrap text-[14px] font-medium text-white sm:text-[22px]">
-              I&apos;m signed in!
-            </button>
-          </div>
-        </>
-      ) : showNextPage ? (
+      {showNextPage ? (
         <TutorialNextPage />
       ) : (
         <div className="p-8 rounded-lg max-w-2xl mx-auto">
           <PanelContent onQuestionAnswered={handleNextClick} />
-        </div>
-      )}
-
-      {!showPanel && (
-        <div className="fixed top-4 right-[115px] z-50">
-          <div className="relative w-16 h-16">
-            <div className="absolute inset-0 bg-blue-500 rounded-full animate-pulse"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-              </svg>
-            </div>
-          </div>
         </div>
       )}
     </div>
