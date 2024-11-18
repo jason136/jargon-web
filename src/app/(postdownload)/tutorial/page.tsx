@@ -391,7 +391,7 @@ const PanelContent = ({ onQuestionAnswered }: { onQuestionAnswered: () => void }
 
   return (
     <>
-      <h2 className="text-4xl font-bold mb-4 text-center">Your First Practice Question</h2>
+      <h2 className="text-4xl font-bold mb-4 text-center">Tutorial: How to use Jargon</h2>
       <h3 className="text-xl font-semibold mb-4 text-indigo-500">What Does Jargon Do?</h3>
       <span className="mb-4">
         Jargon uses the content you&apos;re already consuming, from Product Hunt
