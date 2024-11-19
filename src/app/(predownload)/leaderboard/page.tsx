@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 interface LeaderboardEntry {
   username: string;
   questions: number;
+}
+
+interface ApiResponse {
+  data: LeaderboardEntry[];
 }
 
 const fetchLeaderboardData = async (): Promise<LeaderboardEntry[]> => {
@@ -27,7 +30,7 @@ const fetchLeaderboardData = async (): Promise<LeaderboardEntry[]> => {
       throw new Error('Network response was not ok');
     }
 
-    const { data } = await response.json();
+    const { data } = (await response.json()) as ApiResponse;
     return data;
   } catch (error) {
     console.error('Error fetching leaderboard:', error);
@@ -42,11 +45,21 @@ export default function LeaderboardPage() {
   const entriesPerPage = 10;
 
   useEffect(() => {
-    fetchLeaderboardData().then((data) => {
-      setEntries(data);
-      setDisplayedEntries(data.slice(0, entriesPerPage));
-      setLoading(false);
-    });
+    const fetchData = async () => {
+      try {
+        const response = await fetchLeaderboardData();
+        if (response && Array.isArray(response)) {
+          setEntries(response);
+          setDisplayedEntries(response.slice(0, entriesPerPage));
+        }
+      } catch (error) {
+        console.error('Error fetching leaderboard data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    void fetchData();
   }, []);
 
   const loadMore = () => {
@@ -64,7 +77,7 @@ export default function LeaderboardPage() {
         Leaderboard
       </h1>
       <p className="mt-2 text-center text-lg text-zinc-500">
-        Who's the most productive language learner?
+        Who&apos;s the most productive language learner?
       </p>
 
       {/* Raffle Card */}
@@ -146,7 +159,7 @@ export default function LeaderboardPage() {
       </div>
       <div className="mt-8">
         <p className="text-center text-gray-500">
-          Don't see your name? <a href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-500">Install Jargon</a> and start practicing now!
+          Don&apos;t see your name? <a href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-500">Install Jargon</a> and start practicing now!
         </p>
       </div>
       <div className="mt-8"></div>
