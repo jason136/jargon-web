@@ -108,7 +108,9 @@ export default function LeaderboardPage() {
             </p>
             <div className="flex gap-4">
               <button className="rounded-full bg-indigo-400 px-6 py-2 text-white hover:bg-indigo-500">
-                Claim Points
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSed3w5lLjD1kVYtwDB8BT4bbppIt-s84SLokeDVFZnTChZzkg/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
+                  Claim Points
+                </a>
               </button>
               <button className="rounded-full bg-blue-50 px-6 py-2 text-indigo-400 hover:bg-blue-100">
                 Raffle Rules
