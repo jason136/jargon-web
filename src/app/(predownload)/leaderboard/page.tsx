@@ -4,20 +4,20 @@ import { useState, useEffect } from "react";
 
 interface LeaderboardEntry {
   username: string;
-  questions: number;
+  question_count: number;
 }
 
 interface ApiResponse {
   data: LeaderboardEntry[];
 }
 
-const fetchLeaderboardData = async (): Promise<LeaderboardEntry[]> => {
-  const startDate = "2024-6-01T00:00:00Z";
-  const endDate = "2024-11-30T23:59:59Z";
+const fetchLeaderboardData = async (offset: number, limit: number): Promise<LeaderboardEntry[]> => {
+  const startDate = "2024-06-01";
+  const endDate = "2024-11-30";
   
   try {
     const response = await fetch(
-      `/api/leaderboard?startDate=${startDate}&endDate=${endDate}`,
+      `/api/leaderboard?startDate=${startDate}&endDate=${endDate}&limit=${limit}&offset=${offset}`,
       {
         method: 'GET',
         headers: {
@@ -40,35 +40,48 @@ const fetchLeaderboardData = async (): Promise<LeaderboardEntry[]> => {
 
 export default function LeaderboardPage() {
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
-  const [displayedEntries, setDisplayedEntries] = useState<LeaderboardEntry[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
   const entriesPerPage = 10;
 
+  const loadEntries = async (offset: number) => {
+    const newEntries = await fetchLeaderboardData(offset, entriesPerPage);
+    
+    if (newEntries.length < entriesPerPage) {
+      setHasMore(false);
+    }
+    
+    return newEntries;
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchInitialData = async () => {
       try {
-        const response = await fetchLeaderboardData();
-        if (response && Array.isArray(response)) {
-          setEntries(response);
-          setDisplayedEntries(response.slice(0, entriesPerPage));
-        }
+        const initialEntries = await loadEntries(0);
+        setEntries(initialEntries);
       } catch (error) {
-        console.error('Error fetching leaderboard data:', error);
+        console.error('Error fetching initial leaderboard data:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    void fetchData();
+    void fetchInitialData();
   }, []);
 
-  const loadMore = () => {
-    const currentLength = displayedEntries.length;
-    const nextEntries = entries.slice(
-      currentLength,
-      currentLength + entriesPerPage
-    );
-    setDisplayedEntries([...displayedEntries, ...nextEntries]);
+  const loadMore = async () => {
+    if (loadingMore || !hasMore) return;
+
+    setLoadingMore(true);
+    try {
+      const nextEntries = await loadEntries(entries.length+1);
+      setEntries([...entries, ...nextEntries]);
+    } catch (error) {
+      console.error('Error loading more entries:', error);
+    } finally {
+      setLoadingMore(false);
+    }
   };
 
   return (
@@ -129,7 +142,7 @@ export default function LeaderboardPage() {
             Loading...
           </div>
         ) : (
-          displayedEntries.map((entry, index) => (
+          entries.map((entry, index) => (
             <div
               key={index}
               className={`grid grid-cols-4 items-center rounded-xl px-4 py-3 ${
@@ -143,17 +156,22 @@ export default function LeaderboardPage() {
               }`}
             >
               <span className="font-medium">{entry.username}</span>
-              <span>{entry.questions*10}</span>
+              <span>{entry.question_count * 10}</span>
             </div>
           ))
         )}
 
-        {displayedEntries.length < entries.length && (
+        {hasMore && !loading && (
           <button
             onClick={loadMore}
-            className="mt-4 w-full rounded-xl bg-indigo-600 py-3 text-white hover:bg-indigo-700"
+            disabled={loadingMore}
+            className={`mt-4 w-full rounded-xl py-3 text-white ${
+              loadingMore 
+                ? "bg-indigo-400 cursor-not-allowed"
+                : "bg-indigo-600 hover:bg-indigo-700"
+            }`}
           >
-            Show More...
+            {loadingMore ? "Loading..." : "Show More..."}
           </button>
         )}
       </div>

@@ -43,3 +43,5 @@ yarn-error.log*
 
 ## david being dumb
 .history
+package-lock.json
+yarn.lock
