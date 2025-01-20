@@ -66,6 +66,11 @@ export default function Toolbar({
               Join the Discord!
             </div>
           </Link>
+          <Link href="/leaderboard">
+            <div className="text-[14px] font-medium text-indigo-400">
+              Leaderboard
+            </div>
+          </Link>
         </div>
         <div className="flex flex-col items-center gap-6 py-4 sm:flex-grow">
           <div className="text-[16px] font-medium text-indigo-700">Support</div>

@@ -104,7 +104,7 @@ export default function LeaderboardPage() {
               Gain as many points as possible before{" "}
               <span className="font-semibold">Jan 31st</span> to get the most
               chances for winning a <span className="font-semibold">$250</span>{" "}
-              gift card of choice!
+              gift card of choice! Everyone in the top 10 gets a <span className="font-semibold">$20</span>{" "} gift card!
             </p>
             <div className="flex gap-4">
               <button className="rounded-full bg-indigo-400 px-6 py-2 text-white hover:bg-indigo-500">
@@ -119,7 +119,7 @@ export default function LeaderboardPage() {
               </button>
             </div>
           </div>
-
+          <div className="px-4"></div>
           <div className="mt-6 space-y-2 sm:mt-0">
             <h3 className="text-lg font-medium text-neutral-700">
               How to get points?
@@ -128,6 +128,7 @@ export default function LeaderboardPage() {
               <li>• 10 points / question answered</li>
               <li>• 50 points for posting on your socials + tagging @jargonlearn</li>
               <li>• 100 points for inviting friends to download</li>
+              <li>• 50 points for joining the Jargon Discord</li>
             </ul>
           </div>
         </div>
