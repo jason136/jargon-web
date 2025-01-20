@@ -13,7 +13,7 @@ interface ApiResponse {
 
 const fetchLeaderboardData = async (offset: number, limit: number): Promise<LeaderboardEntry[]> => {
   const startDate = "2025-01-19";
-  const endDate = "2025-3-01";
+  const endDate = "2025-02-01";
   
   try {
     const response = await fetch(
@@ -98,12 +98,12 @@ export default function LeaderboardPage() {
         <div className="flex flex-col sm:flex-row sm:justify-between">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-indigo-600">
-              Language Practice Raffle
+              Jargon&apos;s Language Challenge
             </h2>
             <p className="text-indigo-400">
               Gain as many points as possible before{" "}
-              <span className="font-semibold">February 1st</span> to get the most
-              chances for winning a <span className="font-semibold">$300</span>{" "}
+              <span className="font-semibold">Jan 31st</span> to get the most
+              chances for winning a <span className="font-semibold">$250</span>{" "}
               gift card of choice!
             </p>
             <div className="flex gap-4">
@@ -113,7 +113,9 @@ export default function LeaderboardPage() {
                 </a>
               </button>
               <button className="rounded-full bg-blue-50 px-6 py-2 text-indigo-400 hover:bg-blue-100">
-                Raffle Rules
+                <a href="https://glistening-tuna-07c.notion.site/Jargon-Language-Challenge-Rules-1456a9c18ebb80a0ba55e0901de51c85" target="_blank" rel="noopener noreferrer">  
+                  Challenge Rules
+                </a>
               </button>
             </div>
           </div>
@@ -124,9 +126,8 @@ export default function LeaderboardPage() {
             </h3>
             <ul className="list-inside space-y-1 text-sm text-zinc-500">
               <li>• 10 points / question answered</li>
-              <li>• 50 points for posting on Instagram / LinkedIn + tagging @jargonlearn</li>
+              <li>• 50 points for posting on your socials + tagging @jargonlearn</li>
               <li>• 100 points for inviting friends to download</li>
-              <li>• 3k, 2k and 1k bonus points the top 3 learners on the podium on Nov 30th</li>
             </ul>
           </div>
         </div>
