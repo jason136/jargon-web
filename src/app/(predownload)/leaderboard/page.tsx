@@ -12,8 +12,8 @@ interface ApiResponse {
 }
 
 const fetchLeaderboardData = async (offset: number, limit: number): Promise<LeaderboardEntry[]> => {
-  const startDate = "2024-06-01";
-  const endDate = "2024-11-30";
+  const startDate = "2025-01-19";
+  const endDate = "2025-3-01";
   
   try {
     const response = await fetch(
@@ -102,7 +102,7 @@ export default function LeaderboardPage() {
             </h2>
             <p className="text-indigo-400">
               Gain as many points as possible before{" "}
-              <span className="font-semibold">Nov 30th</span> to get the most
+              <span className="font-semibold">February 1st</span> to get the most
               chances for winning a <span className="font-semibold">$300</span>{" "}
               gift card of choice!
             </p>

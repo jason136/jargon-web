@@ -42,11 +42,18 @@ export async function GET(request: Request) {
       }
     )) as RPCResponse;
 
-    // console.log(leaderboardData);
-    // console.log(error);
+    console.log("Supabase Response:", { leaderboardData, error });
 
     if (error) {
-      throw new Error(error.message);
+      console.error("Supabase Error:", error);
+      return new Response(
+        JSON.stringify({ 
+          error: error.message,
+          details: error.details,
+          hint: error.hint 
+        }), 
+        { status: 500 }
+      );
     }
 
     if (!leaderboardData) {
@@ -59,8 +66,12 @@ export async function GET(request: Request) {
       status: 200,
     });
   } catch (err) {
+    console.error("Unexpected Error:", err);
     return new Response(
-      JSON.stringify({ error: (err as Error).message }),
+      JSON.stringify({ 
+        error: (err as Error).message,
+        stack: process.env.NODE_ENV === 'development' ? (err as Error).stack : undefined 
+      }),
       { status: 500 }
     );
   }
