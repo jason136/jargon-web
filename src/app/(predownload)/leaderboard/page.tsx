@@ -136,7 +136,7 @@ export default function LeaderboardPage() {
       <div className="mt-8 w-full max-w-[900px] space-y-2">
         <div className="grid grid-cols-4 px-4 py-2 text-sm font-medium text-zinc-500">
           <span>username</span>
-          <span>questions answered</span>
+          <span>points</span>
         </div>
         
         {loading ? (
