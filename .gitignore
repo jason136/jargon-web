@@ -40,3 +40,15 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+<<<<<<< Updated upstream
+## david being dumb
+.history
+package-lock.json
+yarn.lock
+=======
+# david being dumb
+.history
+yarn.lock
+package-lock.json
+>>>>>>> Stashed changes
