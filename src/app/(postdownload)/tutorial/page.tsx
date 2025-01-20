@@ -207,7 +207,7 @@ const TutorialNextPage = () => {
     checkForPanelOpen();
   
     return () => clearInterval(intervalId); // Clean up the interval when the component unmounts
-  }, [showFinalFlexiblePopup]);
+  }, [showFinalFinalPopup, showFinalFlexiblePopup]);
 
   useEffect(() => {
     if (!showFinalPopup) return;

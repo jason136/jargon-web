@@ -10,7 +10,7 @@ export default function Toolbar({
 }) {
   return (
     <>
-      <div className="flex w-screen flex-row items-center justify-center px-8 py-4 sm:justify-between">
+      <div className="z-10 flex w-screen flex-row items-center justify-center bg-transparent px-8 py-4 sm:justify-between">
         <div className="flex flex-row items-center sm:flex-row sm:gap-4">
           <Link className="" href="/">
             <Image
@@ -27,12 +27,12 @@ export default function Toolbar({
         </div>
         {state == "predownload" && (
           <Link
-            className="hidden flex-row items-center justify-center gap-2 rounded-[20px] bg-violet-700 px-6 py-2 sm:flex"
+            className="hidden flex-row items-center justify-center gap-2 rounded-[20px] bg-violet-700 px-10 py-2 sm:flex"
             href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj?pli=1"
             target="_blank"
           >
             <div className="whitespace-nowrap text-nowrap text-[15px] font-semibold text-white">
-              Download Extension
+              Install Jargon
             </div>
 
             <Image
@@ -49,7 +49,7 @@ export default function Toolbar({
         {children}
       </div>
 
-      <div className="flex w-screen flex-col bg-violet-200 px-4 py-8 sm:flex-row sm:justify-between sm:px-20">
+      <div className="z-10 flex w-screen flex-col bg-violet-200 px-4 py-8 sm:flex-row sm:justify-between sm:px-20">
         <Image
           className="mx-auto mb-6 h-[60px] w-[172px] object-contain sm:mx-0 sm:mb-0 sm:h-[91px] sm:w-[262px]"
           src="/jargon.png"
@@ -121,7 +121,6 @@ export default function Toolbar({
               />
             </Link>
 
-            
             <Link
               href="https://www.linkedin.com/in/jargon-learn/"
               target="_blank"

@@ -2,35 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  .markup h1 {
-    @apply text-3xl;
-    @apply font-bold;
-    @apply mb-2;
-  }
-  .markup h2 {
-    @apply text-xl;
-    @apply font-bold;
-    @apply mb-2;
-  }
-  .markup h3 {
-    @apply text-lg;
-    @apply font-bold;
-    @apply mb-4;
-  }
-  .markup ul,
-  .markup ol {
-    list-style: revert;
-    @apply ml-8;
-  }
-  .markup li {
-    @apply mb-2;
-  }
-  .markup p {
-    @apply mb-2;
-  }
-  .markup a {
-    @apply underline;
-    @apply text-violet-700;
-  }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

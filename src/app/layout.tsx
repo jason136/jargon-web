@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${quicksand.variable} bg-violet-100`}>
-        <main className="flex min-h-screen flex-col items-center justify-start overflow-hidden bg-violet-100">
+        <main className="flex min-h-screen flex-col items-center justify-start overflow-hidden bg-transparent">
           {children}
         </main>
       </body>

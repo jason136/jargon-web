@@ -1,148 +1,271 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import Sliding from "../../components/Sliding";
 import Question from "../../components/Question";
 import Review from "../../components/Review";
-import Typing from "../../components/Typing";
 import { useState } from "react";
+import FeatureCard from "../../components/FeatureCard";
 
 export default function HomePage() {
-  const [showQuestion, setShowQuestion] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("Spanish");
+
+  const features = [
+    {
+      title: "Never fail to practice",
+      description: "Learning happens every time you open a webpage with text",
+      imagePath: "/card1.png",
+      imageAlt: "Practice feature demonstration",
+      isReversed: true,
+      bgColor: "bg-white",
+      titleColor: "text-purple-600",
+      testColor: "text-zinc-600",
+    },
+    {
+      title: "Learn vocab in context",
+      description:
+        "Practicing with words you see in real life, so you can learn what's relevant to you and apply them later",
+      imagePath: "/card2.png",
+      imageAlt: "Context learning demonstration",
+      isReversed: false,
+      bgColor: "bg-indigo-500",
+      titleColor: "text-white",
+      testColor: "text-white",
+    },
+    {
+      title: "Review past vocab",
+      description:
+        "Vocab are stored in your 'Jar' with context. You can review them by clicking on the extension",
+      imagePath: "/card3.png",
+      imageAlt: "Vocab review demonstration",
+      isReversed: true,
+      bgColor: "bg-white",
+      titleColor: "text-purple-600",
+      testColor: "text-zinc-600",
+    },
+    {
+      title: "Customize it to fit you",
+      description:
+        "Change density (how many questions per page) and highlight style in settings",
+      imagePath: "/card4.png",
+      imageAlt: "Customization demonstration",
+      isReversed: false,
+      bgColor: "bg-purple-100",
+      titleColor: "text-purple-600",
+      testColor: "text-zinc-600",
+    },
+  ];
 
   return (
-    <div className="flex flex-col items-center justify-normal">
-      <h3 className="sm-1 pt-12 text-center text-[16px] font-bold text-zinc-500 sm:p-4 sm:pt-32 sm:text-3xl">
-        Learn a foreign language
-      </h3>
-      <Typing
-        phrases={[
-          "scroll Reddit",
-          "surf the web",
-          "search Wikipedia",
-          "browse the internet",
-        ]}
-      />
+    <div className="relative flex flex-col items-center justify-normal">
+      <div className="absolute inset-x-0 top-[-200px] -z-10 h-[200px] bg-blue-50" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-[900px] bg-blue-50" />
+      <div className="absolute inset-x-0 top-[900px] -z-10 h-[2400px] bg-purple-50" />
+      <div className="absolute inset-x-0 top-[3300px] -z-10 h-[1200px] bg-blue-50" />
+
+      <h1 className="pt-12 text-center text-4xl font-semibold text-black sm:pt-32">
+        Learn a new language
+      </h1>
+
+      <h1 className="pt-4 text-center text-4xl font-semibold text-black">
+        <span className="rounded bg-gradient-to-r from-purple-200 to-blue-200 px-2">
+          While you browse the web
+        </span>{" "}
+        with
+        <span className="inline-flex h-full p-2 align-middle">
+          <Image
+            className="h-[45px] w-[136px] object-contain"
+            src="/jargon.png"
+            alt="Jargon Logo"
+            width={190}
+            height={66}
+          />
+        </span>
+      </h1>
 
       <Link
-        className="mt-10 h-[63px] w-[218px] sm:mt-12 sm:h-[84.53px] sm:w-[290px]"
+        className="relative z-10 mt-20"
         href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj"
         target="_blank"
       >
-        <Image src="/new_jar_top.svg" alt="Jar Top Icon" height={85} width={290} />
+        <Image
+          className="h-[85px] w-[450px]"
+          src="/empty_close_jar.png"
+          alt="Jar Top Icon"
+          height={98}
+          width={502}
+        />
+        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/3 text-3xl font-medium text-white">
+          Get Started
+        </h2>
       </Link>
+
       <Image
-        className="h-auto w-[320px] sm:w-[435px]"
-        src="/jar_only.svg"
+        className="mt-[-60px] h-auto w-[320px] sm:w-[435px]"
+        style={{ clipPath: "inset(10% 0 70% 0)" }}
+        src="/empty_open_jar.png"
         alt="Half Jar Icon"
         height={300}
         width={435}
       />
-      <div className="mt-[120px] sm:mt-[10px]">
-        <Sliding
-          contents={[
-            "Tamil 🇮🇳",
-            "Romanian 🇷🇴",
-            "Croatian 🇭🇷",
-            "Tagalog 🇵🇭",
-            "Korean 🇰🇷",
-            "Greek 🇬🇷",
-            "Portuguese 🇵🇹",
-            "Vietnamese 🇻🇳",
-            "Spanish 🇪🇸",
-            "Japanese 🇯🇵",
-            "German 🇩🇪",
-            "Mandarin Chinese 🇨🇳",
-            "French 🇫🇷",
-            "Sinhala 🇱🇰",
-            "Bengali 🇧🇩",
-            "Turkish 🇹🇷",
-            "Marathi 🇮🇳",
-            "Telugu 🇮🇳",
-            "Italian 🇮🇹",
-            "Urdu 🇵🇰",
-            "Hindi 🇮🇳",
-            "Russian 🇷🇺",
-            "Arabic 🇸🇦"
-          ]}
-        />
-      </div>
 
-      <div className="flex w-screen max-w-[1250px] flex-col items-start justify-start gap-2 px-10 pt-20 sm:gap-4 mt-[-300px] sm:mt-[-200px]" >
-        <h2 
-          className="text-left text-[18px] font-bold text-zinc-500 sm:text-4xl underline decoration-[#7E8EF8] decoration-4 cursor-pointer hover:text-zinc-700 transition-colors"
-          onClick={() => setShowQuestion(true)}
-        >
-          Language mastery is just a click away!
-        </h2>
-
-        <p className="text-left text-[16px] font-medium leading-6 text-zinc-500 sm:text-[26px] sm:leading-8">
-          Jargon augments your web browsing with fun language learning questions that you can answer to practice your language skills, just like the sentence above!
-        </p>
-      </div>
-
-      <div className="flex w-screen flex-col items-center justify-between py-8 sm:flex-row sm:py-16">
-        <div></div>
-        <div className="flex h-full max-w-[400px] flex-grow flex-col justify-end px-8 pb-12 pt-4 text-right sm:px-0 sm:pb-0 sm:pt-40">
-          <h3 className="text-[17px] font-bold leading-[30px] text-violet-700 sm:text-3xl sm:leading-[42px]">
-            Consistent Practice
-          </h3>
-          <p className="text-[14px] font-medium leading-6 text-zinc-500 sm:text-2xl sm:leading-8">
-            Answering bite-sized questions is fun and easy! Each question helps pave the way to language mastery    
-          </p>
-        </div>
-        <div className="rotate-[-5.92deg]">
-          {!showQuestion ? (
-            <div className="flex items-center justify-center h-[200px] w-[180px] sm:h-[300px] sm:w-[200px]">
-              <div className="inline-block text-center animate-bounce bg-violet-200 rounded-lg p-2 sm:p-4 shadow-md">
-                <p className="text-blue-800 font-semibold text-sm sm:text-base">Click on the underlined text to try Jargon!</p>
-                <svg className="w-4 h-4 sm:w-6 sm:h-6 mx-auto mt-1 sm:mt-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-              </div>
+      <div className="z-20 mt-[-460px] flex w-full flex-col items-center justify-center gap-6 px-4 py-12">
+        <div className="w-[90%] max-w-[1200px] overflow-hidden rounded-xl bg-white shadow-lg">
+          <div className="flex h-14 items-center gap-2 bg-[#f1f3f4] px-12">
+            <div className="mx-4 flex h-8 flex-1 items-center rounded-full bg-gray-200 px-4">
+              <div className="h-4 flex-1"></div>
             </div>
-          ) : (
-            <Question
-              progress={50}
-              sentence="¡El dominio del ______ está a un solo clic!"
-              options={["jerga", "idioma", "dialecto", "vernáculo"]}
-              correct="idioma"
+            <div className="flex gap-2 pr-4">
+              <Image
+                src="/icon.png"
+                alt="Jargon Icon"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+              <Image
+                src="/puzzle.png"
+                alt="Extension Icon"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 px-12 pt-8">
+            <Image
+              src="/icon.png"
+              alt="Jargon Icon"
+              width={48}
+              height={48}
+              className="rounded-full"
             />
-          )}
+            <div>
+              <p className="text-xl font-semibold">@JargonLearn</p>
+              <p className="text-gray-600">
+                Language Practice Chrome Extension
+              </p>
+            </div>
+          </div>
+
+          <div className="p-12">
+            <p className="mb-8 text-3xl font-semibold leading-[4rem] text-zinc-600">
+              <span className="rounded bg-gray-200 px-2 text-gray-200">
+                Lorem ipsum
+              </span>{" "}
+              <span className="rounded bg-gradient-to-r from-purple-200 to-blue-200 px-3">
+                Jargon picks out sentences at your level
+              </span>{" "}
+              <span className="rounded bg-gray-200 px-2 text-gray-200">
+                dolor sit amet consectetur adipiscing elit. sed do eiusmod
+                tempor.
+              </span>{" "}
+              <span className="rounded bg-gradient-to-r from-purple-200 to-blue-200 px-3">
+                And generates practice questions from them
+              </span>
+            </p>
+            <p className="text-3xl font-semibold leading-[4rem] text-zinc-600">
+              <span className="rounded bg-gradient-to-r from-purple-200 to-blue-200 px-3">
+                Practice with real context as you scroll on Reddit or read news
+              </span>{" "}
+              <span className="rounded bg-gray-200 px-2 text-gray-200">
+                Ut enim ad minim veniam, quis nostrud exercitation. ullamco
+                laboris nisi.
+              </span>{" "}
+              <span className="rounded bg-gradient-to-r from-purple-200 to-blue-200 px-3">
+                Learn whenever you&apos;re reading text on the web
+              </span>
+            </p>
+          </div>
         </div>
-        <div className="flex h-full max-w-96 flex-col justify-start px-8 pt-12 text-center sm:px-0 sm:pb-40 sm:pt-0 sm:text-left">
-          <h3 className="text-[17px] font-bold leading-[30px] text-violet-700 sm:text-3xl sm:leading-[42px]">
-            Contextual Learning
-          </h3>
-          <p className="text-[14px] font-medium leading-6 text-zinc-500 sm:text-2xl sm:leading-8">
-            Learning to say basic phrases can be fun, but learning to say phrases in
-            the context of your life and interests is more practical!
-          </p>
-        </div>
-        <div></div>
       </div>
 
-      <div className="flex w-screen flex-col items-center justify-center gap-2 bg-blue-50 px-10 pb-12 pt-8 sm:gap-6 sm:py-16">
-        <h2 className="text-center text-[18px] font-bold text-violet-700 sm:text-[45px]">
-          In Context + Integrated Learning ={" "}
-          <span className="inline-flex h-full align-middle">
-            <Image
-              className="h-[42px] w-[130px] object-contain sm:h-[66px] sm:w-[190px]"
-              src="/jargon.png"
-              alt="Jargon Logo"
-              width={190}
-              height={66}
-            />
-          </span>
+      <div className="relative flex w-full max-w-[1000px] items-center justify-center gap-2 px-4 pt-8">
+        <button
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md hover:bg-gray-50"
+          onClick={() => {
+            const languages = document.querySelector(".language-scroll");
+            if (languages) {
+              languages.scrollLeft -= 200;
+            }
+          }}
+        >
+          <span className="text-xl">&larr;</span>
+        </button>
+
+        <div className="language-scroll scrollbar-hide flex gap-4 overflow-x-auto scroll-smooth px-2">
+          {[
+            { name: "Spanish", flag: "🇪🇸" },
+            { name: "Italian", flag: "🇮🇹" },
+            { name: "French", flag: "🇫🇷" },
+            { name: "German", flag: "🇩🇪" },
+            { name: "Mandarin", flag: "🇨🇳" },
+            { name: "Japanese", flag: "🇯🇵" },
+            { name: "Korean", flag: "🇰🇷" },
+          ].map((lang) => (
+            <button
+              key={lang.name}
+              onClick={() => setSelectedLanguage(lang.name)}
+              className={`flex items-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-200 px-6 py-2 text-lg font-medium text-blue-600 transition-colors ${
+                selectedLanguage === lang.name
+                  ? "bg-white shadow-sm"
+                  : "bg-transparent hover:bg-white/50"
+              }`}
+            >
+              <span>{lang.flag}</span>
+              <span>{lang.name}</span>
+            </button>
+          ))}
+        </div>
+
+        <button
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md hover:bg-gray-50"
+          onClick={() => {
+            const languages = document.querySelector(".language-scroll");
+            if (languages) {
+              languages.scrollLeft += 200;
+            }
+          }}
+        >
+          <span className="text-xl">&rarr;</span>
+        </button>
+      </div>
+
+      <div className="flex w-full flex-col items-center justify-center gap-4 px-4 pt-16 text-center">
+        <h2 className="text-4xl font-semibold">
+          <span className="text-blue-300">Language learning requires </span>
+          <span className="text-purple-600">consistency</span>
+          <span className="text-blue-300"> and </span>
+          <span className="text-purple-600">practice</span>
         </h2>
 
-        <p className="max-w-[1100px] text-center text-[15px] font-medium leading-6 text-zinc-500 sm:text-[26px] sm:leading-9">
-          Jargon integrates learning into your browsing experience: whether you
-          are checking emails, reading the news, doing work or scrolling
-          through Reddit, you can learn new vocabulary and phrases
-          effortlessly!
+        <p className="text-2xl font-medium text-zinc-700">
+          Jargon makes it easy by{" "}
+          <span className="rounded bg-gradient-to-r from-purple-200 to-blue-200 px-2">
+            turning websites into language practices
+          </span>
         </p>
       </div>
+
+      <div className="flex flex-col gap-16 pt-20">
+        {features.map((feature, index) => (
+          <FeatureCard key={feature.title} {...feature} index={index} />
+        ))}
+      </div>
+
+      <h2 className="pb-8 text-center text-[20px] font-bold text-neutral-700 sm:text-[45px]">
+        People love{" "}
+        <span className="inline-flex h-full align-middle">
+          <Image
+            className="h-[42px] w-[130px] object-contain sm:h-[66px] sm:w-[190px]"
+            src="/jargon.png"
+            alt="Jargon Logo"
+            width={190}
+            height={66}
+          />
+        </span>{" "}
+        !!
+      </h2>
 
       <div className="flex w-screen flex-col items-center justify-between pt-12 sm:flex-row sm:pb-20 sm:pt-24">
         <div></div>
@@ -169,7 +292,7 @@ export default function HomePage() {
             name: "Stephen",
             lang: "🇨🇳 Chinese Learner",
             review:
-              'Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I am learning.',
+              "Jargon is a great supplement to my Chinese school, and lets me stay ahead of the curve with new vocab. The proficiency feature is great for matching what I am learning.",
             tilt: "rotate-[-4.85deg]",
             offset:
               "translate-x-[-30px] sm:translate-x-0 sm:translate-y-[-30px]",
@@ -191,19 +314,30 @@ export default function HomePage() {
         <div></div>
       </div>
 
-      <h2 className="pb-8 text-center text-[20px] font-bold text-neutral-700 sm:text-[45px]">
-        People love{" "}
-        <span className="inline-flex h-full align-middle">
-          <Image
-            className="h-[42px] w-[130px] object-contain sm:h-[66px] sm:w-[190px]"
-            src="/jargon.png"
-            alt="Jargon Logo"
-            width={190}
-            height={66}
-          />
-        </span>{" "}
-        !!
-      </h2>
+      <div className="x-0 relative -mb-[12rem] w-full max-w-[1200px] px-4">
+        <Image
+          src="/speech.png"
+          alt="Speech bubble background"
+          width={1200}
+          height={400}
+          className="w-full"
+        />
+        <div className="absolute left-1/2 top-[35%] -translate-x-1/2 -translate-y-1/3 text-center">
+          <h3 className="mb-4 text-2xl font-medium text-neutral-700">
+            The best time to learn a new language is now!
+          </h3>
+          <h2 className="mb-8 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-4xl font-semibold text-transparent">
+            Install Jargon to make consistent progress
+          </h2>
+          <Link
+            href="https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj"
+            target="_blank"
+            className="inline-block rounded-full bg-purple-600 px-8 py-3 text-xl font-medium text-white transition-colors hover:bg-purple-700"
+          >
+            Install Jargon
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
